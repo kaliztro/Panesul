@@ -1,0 +1,39 @@
+
+body {
+    font-size: 100%;
+    background-color: #303131;
+}
+
+.titulo {
+    color: #ffffff;
+    font-size: 40px;
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    color: #ff0000;
+}
+
+.maquinasDinheiro {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.stone {
+    color:green;
+}
+
+p.banrisul {
+    color: #0787ff;
+}
+
+p.dinheiro {
+    color:gold;
+}
+
+.input {
+    background-color: #d0d3d6;
+}
