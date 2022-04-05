@@ -20,6 +20,9 @@ p {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+    padding: 30px;
+    background-color: #2e2f30;
+    border-radius: 10px;
 }
 
 p.stone {
