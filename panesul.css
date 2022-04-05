@@ -16,6 +16,10 @@ p {
     color: #ff0000;
 }
 
+.input{
+    border-radius: 10px;
+}
+
 .maquinasDinheiro {
     width: 300px;
     margin-left: auto;
