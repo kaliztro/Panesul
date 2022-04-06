@@ -84,3 +84,4 @@ function calculadora2() {
     }
 }
 
+console.log(`ei oq vc esta fazendo aqui?. sai jà daqiu!!`)
