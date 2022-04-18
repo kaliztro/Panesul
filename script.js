@@ -65,7 +65,7 @@ function calculadora() {
     acumulador = isNaN(pix)?0:acumulador;
 
     while(entrada != 0) {
-        entrada = parseFloat(prompt(`Digite o valor à ser somado`));
+        entrada = parseFloat(prompt(`Digite o valor à ser somado`)); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
         acumulador += entrada;
         document.getElementById('soma').value = acumulador
 
@@ -88,4 +88,5 @@ function calculadora2() {
     }
 }
 
-console.log(`ei oq vc esta fazendo aqui?. sai já daqui!! \n\n\n\n\n Desenvolvido por Kaliztro#4988`)
+console.log(`\n\n\n\n\n 🤬 ei oq vc esta fazendo aqui?. cai fora!! \n\n\n\n\n`)
+console.log(`\n\n\n\n\n Desenvolvido por Kaliztro#4988 \n\n\n\n\n`)
