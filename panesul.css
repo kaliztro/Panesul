@@ -1,31 +1,42 @@
-
 body {
-    font-size: 100%;
     background-color: #303131;
+}
+
+.div1 {
+    width: auto;
+    height: auto; 
+    display: inline-block; 
+    padding: 30px;
+    background-color: #2e2f30;
+    border-radius: 20px;
+}
+
+.div2 {
+    position: absolute; /* topo*/
+    width: auto;
+    height: auto; /* altura */
+    display: inline-block;  /* deixa um ao lado do outro */
+    padding: 30px;
+    background-color: #2e2f30;
+    border-radius: 20px; /* deixa os cantos arredondados */ 
+    margin-left: 10px; /* deixa o espaço entre os 2 blocos */ 
+}
+
+.section1 {
+    max-width: 40rem;
+    margin: 0 auto;
 }
 
 .titulo {
     color: #ffffff;
     font-size: 40px;
-    width: 360px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 p {
-    color: #ff0000;
+    color: #ffffff;
 }
 
 .input{
-    border-radius: 10px;
-}
-
-.maquinasDinheiro {
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px;
-    background-color: #2e2f30;
     border-radius: 10px;
 }
 
@@ -44,3 +55,4 @@ p.dinheiro {
 .input {
     background-color: #d0d3d6;
 }
+
