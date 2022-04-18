@@ -62,7 +62,7 @@ function calculadora() {
     let entrada = 1;
     let acumulador = parseFloat(document.getElementById('soma').value);
 
-    acumulador = isNaN(pix)?0:acumulador;
+    // acumulador = isNaN(pix)?0:acumulador;
 
     while(entrada != 0) {
         entrada = parseFloat(prompt(`Digite o valor à ser somado`)); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
@@ -77,7 +77,7 @@ function calculadora2() {
     let entrada = 1;
     let acumulador = parseFloat(document.getElementById('soma').value);
 
-    acumulador = isNaN(pix)?0:acumulador;
+    // acumulador = isNaN(pix)?0:acumulador;
 
     while(entrada != 0) {
         entrada = parseFloat(prompt(`Digite o valor à ser Subtraido`));
