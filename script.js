@@ -8,7 +8,9 @@ function banrisulSoma(){
 
     let banrisulTotal = banri1 + banri2;
 
-    document.getElementById('banrisulTotal').innerHTML = "Total: R$ " + banrisulTotal
+	let valorFormatado = banrisulTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    document.getElementById('banrisulTotal').innerHTML = `Total: ${valorFormatado}`
 };
 
 function stoneSoma(){
@@ -21,7 +23,9 @@ function stoneSoma(){
 
     let stoneTotal = stone1 + stone2;
 
-    document.getElementById('stoneTotal').innerHTML = "Total: R$ " + stoneTotal
+    let valorFormatado = stoneTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    document.getElementById('stoneTotal').innerHTML = `Total: ${valorFormatado}`
  };
 
  function cieloSoma() {
@@ -29,8 +33,10 @@ function stoneSoma(){
     let cielo = parseFloat(document.getElementById(`cielo`).value);
 
     cielo = isNaN(cielo)?0:cielo;
+    
+    let valorFormatado = cielo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    document.getElementById('cieloTotal').innerHTML = "Total: R$ " + cielo
+    document.getElementById('cieloTotal').innerHTML = `Total: ${valorFormatado}`
  };
 
 function total(){
@@ -52,9 +58,13 @@ function total(){
 
     let total = stone1 + stone2 + banri1 + banri2 + cielo + dinheiro + pix;
 
-    document.getElementById('dinheiroTotal').innerHTML = "Total: R$ " + total
+    let valorFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    document.getElementById('dinheiroTotal').innerHTML = `Total: ${valorFormatado}`
 
     document.getElementById('soma').value = total
+
+    document.getElementById('total').innerHTML = `Total ${valorFormatado}`   //aba pagamentos
 
 };
 
@@ -69,7 +79,10 @@ function calculadora() {
         acumulador += entrada;
         document.getElementById('soma').value = acumulador
 
-        alert(`total ` + acumulador);
+        let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        document.getElementById('total').innerHTML = `Total ${valorFormatado}`
+
+        alert(`total ${valorFormatado}`);
     }
 }
 
@@ -82,9 +95,13 @@ function calculadora2() {
     while(entrada != 0) {
         entrada = parseFloat(prompt(`Digite o valor à ser Subtraido`));
         acumulador -= entrada;
+
         document.getElementById('Subtrair').value = acumulador
 
-        alert(`total ` + acumulador);
+        let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        document.getElementById('total').innerHTML = `Total ${valorFormatado}`
+
+        alert(`total ${acumulador}`);
     }
 }
 
