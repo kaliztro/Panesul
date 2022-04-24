@@ -30,11 +30,21 @@ function stoneSoma() {
 
 function cieloSoma() {
 
+    let stone1 = parseFloat(document.getElementById('stone1').value);
+    let stone2 = parseFloat(document.getElementById('stone2').value);
+    let banri1 = parseFloat(document.getElementById('banri1').value);
+    let banri2 = parseFloat(document.getElementById('banri2').value);
     let cielo = parseFloat(document.getElementById(`cielo`).value);
 
+    stone1 = isNaN(stone1) ? 0 : stone1;
+    stone2 = isNaN(stone2) ? 0 : stone2;
+    banri1 = isNaN(banri1) ? 0 : banri1;
+    banri2 = isNaN(banri2) ? 0 : banri2;
     cielo = isNaN(cielo) ? 0 : cielo;
 
-    let valorFormatado = cielo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let soma = banri1 + banri2 + stone1 + stone2 + cielo
+
+    let valorFormatado = soma.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     document.getElementById('cieloTotal').innerHTML = `Total: ${valorFormatado}`
 };
@@ -90,20 +100,27 @@ function calculadora() {
     acumulador = isNaN(acumulador)?0:acumulador;
 
     while (entrada != 0) {
-        entrada = parseFloat(prompt(`Digite o valor à ser somado ou 0 para sair`)); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
-        acumulador += entrada;
+        entrada = prompt(`Digite o valor à ser somado ou 0 para sair`); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
+
+        if(entrada == null) { //se clicar em cancelar ele fecha o loop
+            entrada = 0
+        };
+
+        let valor = parseFloat(entrada) //converte a entrada de string para numero
+
+        acumulador += valor; //soma os valores
         document.getElementById('soma').value = acumulador
 
-        let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); //converte o resultado para o formato br
         document.getElementById('total').innerHTML = `Total ${valorFormatado}`
 
-        alert(`total ${valorFormatado}`);
+        alert(`total ${valorFormatado}`); //mostra o valor
 
         //Total soma
         // document.getElementById('ent').innerHTML = `Entrada: ${valorFormatado}`;
 
-    }
-}
+    };
+};
 
 function calculadora2() {
     let entrada = 1;
@@ -112,8 +129,14 @@ function calculadora2() {
     acumulador = isNaN(acumulador)?0:acumulador;
 
     while (entrada != 0) {
-        entrada = parseFloat(prompt(`Digite o valor à ser Subtraido ou 0 para sair`));
-        acumulador -= entrada;
+        entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
+
+        if(entrada == null) {
+            entrada = 0
+        };
+        
+        let valor = parseFloat(entrada)
+        acumulador -= valor;
 
         document.getElementById('Subtrair').value = acumulador
 
@@ -121,6 +144,7 @@ function calculadora2() {
         document.getElementById('total').innerHTML = `Total ${valorFormatado}`
 
         alert(`total ${acumulador}`);
+
         //Total subtraçao
         // document.getElementById('sai').value = valorFormatado;
     }
