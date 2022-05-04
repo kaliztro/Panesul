@@ -47,6 +47,9 @@ function cieloSoma() {
     let valorFormatado = soma.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     document.getElementById('cieloTotal').innerHTML = `Total: ${valorFormatado}`
+
+    //Total maquininha
+    document.getElementById('mac').innerHTML = `Cartão: ${valorFormatado.bold()}`;
 };
 
 function total() {
@@ -79,7 +82,7 @@ function total() {
     //Total maquininha
     let totMaq = stone1 + stone2 + banri1 + banri2 + cielo;
     let totMaqui = totMaq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('mac').innerHTML = `Maquininhas: ${totMaqui.bold()}`;
+    document.getElementById('mac').innerHTML = `Cartão: ${totMaqui.bold()}`;
 
     //Total dinheiro
     let totDin =  dinheiro + pix;
@@ -94,49 +97,56 @@ function total() {
 };
 
 function calculadora() {
-    let entrada = 1;
     let acumulador = parseFloat(document.getElementById('soma').value);
 
-    acumulador = isNaN(acumulador)?0:acumulador;
+    acumulador = isNaN(acumulador)?0:acumulador; // se n tiver acumulador ele valera 0
 
-    while (entrada != 0) {
-        entrada = prompt(`Digite o valor à ser somado ou 0 para sair`); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
+    while (true) {
+        let entrada = prompt(`Digite o valor à ser somado ou 0 para sair`); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
 
         if(entrada == null) { //se clicar em cancelar ele fecha o loop
-            entrada = 0
+            break
+        };
+
+        if (entrada == 0) { //se digitar 0 ele fecha o loop
+            break
         };
 
         let valor = parseFloat(entrada) //converte a entrada de string para numero
 
+        valor = isNaN(valor) ? 0 : valor; //se n for digitado nada o valor fica 0
+
         acumulador += valor; //soma os valores
-        document.getElementById('soma').value = acumulador
+        document.getElementById('soma').value = acumulador //adiciona o valor na tag soma
 
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); //converte o resultado para o formato br
-        document.getElementById('total').innerHTML = `Total ${valorFormatado}`
+        document.getElementById('total').innerHTML = `Total ${valorFormatado}` //adiciona o resultado em BR na tag total
 
         alert(`total ${valorFormatado}`); //mostra o valor
-
-        //Total soma
-        // document.getElementById('ent').innerHTML = `Entrada: ${valorFormatado}`;
 
     };
 };
 
 function calculadora2() {
-    let entrada = 1;
     let acumulador = parseFloat(document.getElementById('soma').value);
 
     acumulador = isNaN(acumulador)?0:acumulador;
 
-    while (entrada != 0) {
-        entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
+    while (true) {
+        let entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
 
-        if(entrada == null) {
-            entrada = 0
+        if(entrada == null) { //se clicar em cancelar ele fecha o loop
+            break
+        };
+
+        if (entrada == 0) { //se digitar 0 ele fecha o loop
+            break
         };
         
         let valor = parseFloat(entrada)
-        acumulador -= valor;
+        acumulador -= valor; // diminui os valores
+
+        valor = isNaN(valor) ? 0 : valor;
 
         document.getElementById('Subtrair').value = acumulador
 
@@ -145,10 +155,22 @@ function calculadora2() {
 
         alert(`total ${acumulador}`);
 
-        //Total subtraçao
-        // document.getElementById('sai').value = valorFormatado;
     }
 }
 
 console.log(`\n\n\n\n\n 🤬 ei oq vc esta fazendo aqui?. cai fora!! \n\n\n\n\n`)
 console.log(`\n\n\n\n\n Desenvolvido por Kaliztro#4988 \n\n\n\n\n`)
+
+
+function teste() {
+    let total = document.getElementById('total').innerHTML
+
+    let teste = total.split('').filter(function (ele) {
+        return !isNaN(ele);
+    }).join('');
+
+
+    alert(teste)
+}
+
+console.log(teste())

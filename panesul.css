@@ -56,3 +56,14 @@ p.dinheiro {
     background-color: #d0d3d6;
 }
 
+.botao {
+border-radius: 5px;
+cursor:pointer;
+}
+.botao:hover {
+    background-color: rgba(35, 39, 44, 0.25);
+}
+
+.btn{
+cursor:pointer;  
+}
