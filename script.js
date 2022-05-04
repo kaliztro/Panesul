@@ -148,7 +148,6 @@ function calculadora2() {
 
         valor = isNaN(valor) ? 0 : valor;
 
-        document.getElementById('Subtrair').value = acumulador
         document.getElementById('soma').value = acumulador
 
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
