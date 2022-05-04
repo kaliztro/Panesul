@@ -149,6 +149,7 @@ function calculadora2() {
         valor = isNaN(valor) ? 0 : valor;
 
         document.getElementById('Subtrair').value = acumulador
+        document.getElementById('soma').value = acumulador
 
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById('total').innerHTML = `Total ${valorFormatado}`
@@ -160,17 +161,3 @@ function calculadora2() {
 
 console.log(`\n\n\n\n\n 🤬 ei oq vc esta fazendo aqui?. cai fora!! \n\n\n\n\n`)
 console.log(`\n\n\n\n\n Desenvolvido por Kaliztro#4988 \n\n\n\n\n`)
-
-
-function teste() {
-    let total = document.getElementById('total').innerHTML
-
-    let teste = total.split('').filter(function (ele) {
-        return !isNaN(ele);
-    }).join('');
-
-
-    alert(teste)
-}
-
-console.log(teste())
