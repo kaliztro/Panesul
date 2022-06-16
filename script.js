@@ -153,7 +153,7 @@ function calculadora2() {
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById('total').innerHTML = `Total ${valorFormatado}`
 
-        alert(`total ${acumulador}`);
+        alert(`total ${valorFormatado}`);
 
     }
 }
