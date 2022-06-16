@@ -30,26 +30,14 @@ function stoneSoma() {
 
 function cieloSoma() {
 
-    let stone1 = parseFloat(document.getElementById('stone1').value);
-    let stone2 = parseFloat(document.getElementById('stone2').value);
-    let banri1 = parseFloat(document.getElementById('banri1').value);
-    let banri2 = parseFloat(document.getElementById('banri2').value);
     let cielo = parseFloat(document.getElementById(`cielo`).value);
 
-    stone1 = isNaN(stone1) ? 0 : stone1;
-    stone2 = isNaN(stone2) ? 0 : stone2;
-    banri1 = isNaN(banri1) ? 0 : banri1;
-    banri2 = isNaN(banri2) ? 0 : banri2;
     cielo = isNaN(cielo) ? 0 : cielo;
 
-    let soma = banri1 + banri2 + stone1 + stone2 + cielo
-
-    let valorFormatado = soma.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let valorFormatado = cielo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     document.getElementById('cieloTotal').innerHTML = `Total: ${valorFormatado}`
 
-    //Total maquininha
-    document.getElementById('mac').innerHTML = `Cartão: ${valorFormatado.bold()}`;
 };
 
 function total() {

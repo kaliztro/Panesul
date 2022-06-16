@@ -17,63 +17,73 @@
 
 <body>
 
-    <section class="section1" >
+    <section class="section1">
 
-    <div class="div1">
+        <div class="div1">
 
-        <div class="fundo">
+            <div class="fundo">
 
-            <h1 class="titulo"><b>Maquininha</b></h1>
+                <h1 class="titulo"><b>Maquininha</b></h1>
 
-            <p class="banrisul"> Banrisul 1 <input class="input" type="number" id="banri1"></p>
-            <p class="banrisul"> Banrisul 2 <input class="input" type="number" id="banri2"></p>
+                <form action="" method="post">
+                    <p class="banrisul"> Banrisul 1 <input class="input" type="number" id="banri1"
+                            onblur="banrisulSoma(), total()"></p>
+                    <p class="banrisul"> Banrisul 2 <input class="input" type="number" id="banri2"
+                            onblur="banrisulSoma(), total()"></p>
 
-            <p class="banrisul" id="banrisulTotal">Total: </p></p>
+                    <p class="banrisul" id="banrisulTotal">Total: </p>
+                    </p>
+                </form>
+                <!-- <button class="botao" onclick="banrisulSoma()">Total</button> -->
 
-            <button class="botao" onclick="banrisulSoma()">Total</button>
+                <form action="" method="post">
+                    <p class="stone"> Stone 1 <input class="input" type="number" id="stone1"
+                            onblur="stoneSoma(), total()"></p>
+                    <p class="stone"> Stone 2 <input class="input" type="number" id="stone2"
+                            onblur="stoneSoma(), total()"></p>
 
-            <p class="stone"> Stone 1 <input class="input" type="number" id="stone1"></p>
-            <p class="stone"> Stone 2 <input class="input" type="number" id="stone2"></p>
+                    <p class="stone" id="stoneTotal">Total: </p>
+                    </p>
+                </form>
 
-            <p class="stone" id="stoneTotal">Total: </p></p>
+                <!-- <button class="botao" onclick="stoneSoma()">Total</button> -->
+                <form action="" method="post">
+                    <p> Cielo <input class="input" type="number" id="cielo" onblur="cieloSoma(), total()"> </p>
+                </form>
+                <p id="cieloTotal">Total: </p>
+                </p>
 
-            <button class="botao" onclick="stoneSoma()">Total</button>
+                <!-- <button class="botao" onclick="cieloSoma()">Total</button> -->
 
-            <p > Cielo <input class="input" type="number" id="cielo"> </p>
+                <form action="" method="post">
+                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" onblur="total()"></p>
+                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" onblur="total()"></p>
 
-            <p id="cieloTotal">Total: </p></p>
+                    <p class="dinheiro" id="dinheiroTotal">Total: </p>
+                    </p>
+                </form>
 
-            <button class="botao" onclick="cieloSoma()">Total</button>
+                <button class="botao" onclick="total()">Total</button>
 
-            <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro"></p>
-            <p class="dinheiro"> Pix <input class="input" type="number" id="pix"></p>
+                <br><br> <button class="btn" onclick="calculadora()"> Somar </button>
 
-            <p class="dinheiro" id="dinheiroTotal">Total: </p></p>
+                <input class="input" type="number" id="soma" disabled="disabled">
 
-            <button class="botao" onclick="total()">Total</button>
+                <br><br> <button class="btn" onclick="calculadora2()"> Subtrair </button>
 
-
-            <br><br> <button class="btn" onclick="calculadora()"> Somar </button>
-
-            <input  class="input" type="number" id="soma" disabled="disabled">
-
-            <br><br> <button class="btn" onclick="calculadora2()"> Subtrair </button>
-
-
-
+            </div>
         </div>
-    </div>
 
-    <div class="div2">
-        <h1 class="titulo" id="total"> Total</h1>
-         <div class="fundo"> 
-            <p class="maqui" id="mac">Cartão: </p>
-            <p class="dinh" id="din">Dinheiro: </p>
+        <div class="div2">
+            <h1 class="titulo" id="total"> Total</h1>
+            <div class="fundo">
+                <p class="maqui" id="mac">Cartão: </p>
+                <p class="dinh" id="din">Dinheiro: </p>
 
+            </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
 </body>
 
