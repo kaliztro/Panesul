@@ -88,6 +88,7 @@ function calculadora() {
     let acumulador = parseFloat(document.getElementById('soma').value);
 
     acumulador = isNaN(acumulador)?0:acumulador; // se n tiver acumulador ele valera 0
+    let a = []; // array vazia que sera usada para armazenar os valores somados
 
     while (true) {
         let entrada = prompt(`Digite o valor à ser somado ou 0 para sair`); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
@@ -110,6 +111,9 @@ function calculadora() {
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); //converte o resultado para o formato br
         document.getElementById('total').innerHTML = `Total ${valorFormatado}` //adiciona o resultado em BR na tag total
 
+        a.push(valor) // adiciona os valores digitados em uma array
+        document.getElementById('valoresSomados').innerHTML = `Historico de soma: R$ ${a}`
+
         alert(`total ${valorFormatado}`); //mostra o valor
 
     };
@@ -119,6 +123,7 @@ function calculadora2() {
     let acumulador = parseFloat(document.getElementById('soma').value);
 
     acumulador = isNaN(acumulador)?0:acumulador;
+    let a = [];
 
     while (true) {
         let entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
@@ -140,6 +145,9 @@ function calculadora2() {
 
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById('total').innerHTML = `Total ${valorFormatado}`
+
+        a.push(valor) // adiciona os valores digitados em uma array
+        document.getElementById('valoresSubtraidos').innerHTML = `Historico de subtração: R$ ${a}`
 
         alert(`total ${valorFormatado}`);
 

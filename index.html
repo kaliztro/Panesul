@@ -26,9 +26,9 @@
                 <h1 class="titulo"><b>Maquininha</b></h1>
 
                 <form action="" method="post">
-                    <p class="banrisul"> Banrisul 1 <input class="input" type="number" id="banri1"
+                    <p class="banrisul"> Banrisul 1 <input class="input" type="number" id="banri1" placeholder="0"
                             onblur="banrisulSoma(), total()"></p>
-                    <p class="banrisul"> Banrisul 2 <input class="input" type="number" id="banri2"
+                    <p class="banrisul"> Banrisul 2 <input class="input" type="number" id="banri2" placeholder="0"
                             onblur="banrisulSoma(), total()"></p>
 
                     <p class="banrisul" id="banrisulTotal">Total: </p>
@@ -37,9 +37,9 @@
                 <!-- <button class="botao" onclick="banrisulSoma()">Total</button> -->
 
                 <form action="" method="post">
-                    <p class="stone"> Stone 1 <input class="input" type="number" id="stone1"
+                    <p class="stone"> Stone 1 <input class="input" type="number" id="stone1" placeholder="0"
                             onblur="stoneSoma(), total()"></p>
-                    <p class="stone"> Stone 2 <input class="input" type="number" id="stone2"
+                    <p class="stone"> Stone 2 <input class="input" type="number" id="stone2" placeholder="0"
                             onblur="stoneSoma(), total()"></p>
 
                     <p class="stone" id="stoneTotal">Total: </p>
@@ -48,7 +48,7 @@
 
                 <!-- <button class="botao" onclick="stoneSoma()">Total</button> -->
                 <form action="" method="post">
-                    <p> Cielo <input class="input" type="number" id="cielo" onblur="cieloSoma(), total()"> </p>
+                    <p> Cielo <input class="input" type="number" id="cielo" placeholder="0" onblur="cieloSoma(), total()"> </p>
                 </form>
                 <p id="cieloTotal">Total: </p>
                 </p>
@@ -56,8 +56,8 @@
                 <!-- <button class="botao" onclick="cieloSoma()">Total</button> -->
 
                 <form action="" method="post">
-                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" onblur="total()"></p>
-                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" onblur="total()"></p>
+                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" placeholder="0" onblur="total()"></p>
+                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" placeholder="0" onblur="total()"></p>
 
                     <p class="dinheiro" id="dinheiroTotal">Total: </p>
                     </p>
@@ -67,7 +67,7 @@
 
                 <br><br> <button class="btn" onclick="calculadora()"> Somar </button>
 
-                <input class="input" type="number" id="soma" disabled="disabled">
+                <input class="input" type="number" id="soma" placeholder="0" disabled="disabled">
 
                 <br><br> <button class="btn" onclick="calculadora2()"> Subtrair </button>
 
@@ -79,6 +79,8 @@
             <div class="fundo">
                 <p class="maqui" id="mac">Cartão: </p>
                 <p class="dinh" id="din">Dinheiro: </p>
+                <p class="" id="valoresSomados">Historico de soma:</p>
+                <p class="" id="valoresSubtraidos">Historico de subtração:</p>
 
             </div>
         </div>
