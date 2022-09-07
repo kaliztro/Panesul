@@ -73,13 +73,13 @@ function total() {
     document.getElementById('mac').innerHTML = `Cartão: ${totMaqui.bold()}`;
 
     //Total dinheiro
-    let totDin =  dinheiro + pix;
+    let totDin = dinheiro + pix;
     let totDinh = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('din').innerHTML = `Dinheiro: ${totDinh.bold()}`;
 
-     //toal do dinheiro e pix
-     let tDinPix = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-     document.getElementById('dinheiroTotal').innerHTML = `Total: ${tDinPix}`;
+    //toal do dinheiro e pix
+    let tDinPix = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('dinheiroTotal').innerHTML = `Total: ${tDinPix}`;
 
 
 };
@@ -87,13 +87,13 @@ function total() {
 function calculadora() {
     let acumulador = parseFloat(document.getElementById('soma').value);
 
-    acumulador = isNaN(acumulador)?0:acumulador; // se n tiver acumulador ele valera 0
+    acumulador = isNaN(acumulador) ? 0 : acumulador; // se n tiver acumulador ele valera 0
     let a = []; // array vazia que sera usada para armazenar os valores somados
 
     while (true) {
         let entrada = prompt(`Digite o valor à ser somado ou 0 para sair`); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
 
-        if(entrada == null) { //se clicar em cancelar ele fecha o loop
+        if (entrada == null) { //se clicar em cancelar ele fecha o loop
             break
         };
 
@@ -122,20 +122,20 @@ function calculadora() {
 function calculadora2() {
     let acumulador = parseFloat(document.getElementById('soma').value);
 
-    acumulador = isNaN(acumulador)?0:acumulador;
+    acumulador = isNaN(acumulador) ? 0 : acumulador;
     let a = [];
 
     while (true) {
         let entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
 
-        if(entrada == null) { //se clicar em cancelar ele fecha o loop
+        if (entrada == null) { //se clicar em cancelar ele fecha o loop
             break
         };
 
         if (entrada == 0) { //se digitar 0 ele fecha o loop
             break
         };
-        
+
         let valor = parseFloat(entrada)
         acumulador -= valor; // diminui os valores
 
@@ -154,8 +154,7 @@ function calculadora2() {
     }
 }
 
-console.log("%c✋ Espere! 🛑","font-family:Comic Sans MS; font-size: 60px; font-weight: bold; color: red; background: #fff; border: 1px solid #f3f3f3; border-radius: 10px; padding: 15px"),
-console.log('%c🤬 O que você esta fazendo aqui?. cai fora!!',"font-family:Comic Sans MS; font-size: 20px; font-weight: bold; color: #7F7F7F; background: #fff; border: 1px solid #f3f3f3; border-radius: 5px; padding: 8px")
+console.log("%c✋ Espere! 🛑", "font-family:Comic Sans MS; font-size: 60px; font-weight: bold; color: red; background: #fff; border: 1px solid #f3f3f3; border-radius: 10px; padding: 15px")
+console.log('%c🤬 O que você esta fazendo aqui?. cai fora!!', "font-family:Comic Sans MS; font-size: 20px; font-weight: bold; color: #7F7F7F; background: #fff; border: 1px solid #f3f3f3; border-radius: 5px; padding: 8px")
 console.log(`\n\n\n\n\n`)
-console.log("%cDesenvolvido por Kaliztro#4988","font-family:Comic Sans MS; font-size:40px; font-weight:bold; color: #fff; padding: 30px")
- 
+console.log("%cDesenvolvido por Kaliztro#4988", "font-family:Comic Sans MS; font-size:40px; font-weight:bold; color: #fff; padding: 30px")

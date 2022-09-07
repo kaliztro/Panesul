@@ -67,3 +67,17 @@ cursor:pointer;
 .btn{
 cursor:pointer;  
 }
+
+.rodape {
+    margin-top: 200px;
+    border-top: 0.4px solid #ffffff;
+}
+
+.developed {
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-size: 15px;
+    opacity: 70%;
+    position:  fixed;
+    right: 60px;
+}
