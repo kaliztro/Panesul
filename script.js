@@ -1,3 +1,17 @@
+$(function () {  //avança para o próximo input ao apertar enter
+    $('body').on('keydown', 'input, select', function (e) {
+        if (e.which === 13) {
+            var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
+            focusable = form.find('input').filter(':visible');
+            next = focusable.eq(focusable.index(this) + 1);
+            if (next.length) {
+                next.focus();
+            }
+            return false;
+        }
+    });
+});
+
 function banrisulSoma() {
 
     let banri1 = parseFloat(document.getElementById('banri1').value);
@@ -81,6 +95,10 @@ function total() {
     let tDinPix = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('dinheiroTotal').innerHTML = `Total: ${tDinPix}`;
 
+    //deixa o historico de soma e de subtração zerados
+    document.getElementById('valoresSomados').innerHTML = `Historico de soma: R$ 0`
+    document.getElementById('valoresSubtraidos').innerHTML = `Historico de subtração: R$ 0`
+
 
 };
 
@@ -111,7 +129,7 @@ function calculadora() {
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); //converte o resultado para o formato br
         document.getElementById('total').innerHTML = `Total ${valorFormatado}` //adiciona o resultado em BR na tag total
 
-        a.push(valor) // adiciona os valores digitados em uma array
+        a.push(` ${valor}`) // adiciona os valores digitados em uma array
         document.getElementById('valoresSomados').innerHTML = `Historico de soma: R$ ${a}`
 
         alert(`total ${valorFormatado}`); //mostra o valor
@@ -146,7 +164,7 @@ function calculadora2() {
         let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById('total').innerHTML = `Total ${valorFormatado}`
 
-        a.push(valor) // adiciona os valores digitados em uma array
+        a.push(` -${valor}`) // adiciona os valores digitados em uma array
         document.getElementById('valoresSubtraidos').innerHTML = `Historico de subtração: R$ ${a}`
 
         alert(`total ${valorFormatado}`);

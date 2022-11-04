@@ -11,6 +11,7 @@
 
     <title>Panesul - Fechamento</title>
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
 
 </head>
@@ -33,10 +34,7 @@
 
                     <p class="banrisul" id="banrisulTotal">Total: </p>
                     </p>
-                </form>
-                <!-- <button class="botao" onclick="banrisulSoma()">Total</button> -->
 
-                <form action="" method="post">
                     <p class="stone"> Stone 1 <input class="input" type="number" id="stone1" placeholder="0"
                             onblur="stoneSoma(), total()"></p>
                     <p class="stone"> Stone 2 <input class="input" type="number" id="stone2" placeholder="0"
@@ -44,20 +42,17 @@
 
                     <p class="stone" id="stoneTotal">Total: </p>
                     </p>
-                </form>
 
-                <!-- <button class="botao" onclick="stoneSoma()">Total</button> -->
-                <form action="" method="post">
-                    <p> Cielo <input class="input" type="number" id="cielo" placeholder="0" onblur="cieloSoma(), total()"> </p>
-                </form>
-                <p id="cieloTotal">Total: </p>
-                </p>
+                    <p> Cielo <input class="input" type="number" id="cielo" placeholder="0"
+                            onblur="cieloSoma(), total()"> </p>
 
-                <!-- <button class="botao" onclick="cieloSoma()">Total</button> -->
+                    <p id="cieloTotal">Total: </p>
+                    </p>
 
-                <form action="" method="post">
-                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" placeholder="0" onblur="total()"></p>
-                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" placeholder="0" onblur="total()"></p>
+                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" placeholder="0"
+                            onblur="total()"></p>
+                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" placeholder="0"
+                            onblur="total()"></p>
 
                     <p class="dinheiro" id="dinheiroTotal">Total: </p>
                     </p>
@@ -87,7 +82,7 @@
 
     </section>
 
-    <footer class="rodape"> 
+    <footer class="rodape">
         <p class="developed">Desenvolvido por Kaliztro#4988</p>
     </footer>
 
