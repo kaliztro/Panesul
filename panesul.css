@@ -81,3 +81,15 @@ cursor:pointer;
     position:  fixed;
     right: 60px;
 }
+
+/* remove os setinhas que acrescentam/diminuem um numero do imput */
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+ 
+ }

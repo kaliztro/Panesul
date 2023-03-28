@@ -27,17 +27,19 @@
                 <h1 class="titulo"><b>Maquininha</b></h1>
 
                 <form action="" method="post">
-                    <p class="banrisul"> Banrisul 1 <input class="input" type="number" id="banri1" placeholder="0"
+                    <p class="banrisul"> Banrisul 1 <input class="input" type="number" id="banri1" step="any" placeholder="0"
                             onblur="banrisulSoma(), total()"></p>
-                    <p class="banrisul"> Banrisul 2 <input class="input" type="number" id="banri2" placeholder="0"
+                    <p class="banrisul"> Banrisul 2 <input class="input" type="number" id="banri2" step="any" placeholder="0"
+                            onblur="banrisulSoma(), total()"></p>
+                    <p class="banrisul"> Banrisul 3 <input class="input" type="number" id="banri3" step="any" placeholder="0"
                             onblur="banrisulSoma(), total()"></p>
 
                     <p class="banrisul" id="banrisulTotal">Total: </p>
                     </p>
 
-                    <p class="stone"> Stone 1 <input class="input" type="number" id="stone1" placeholder="0"
+                    <p class="stone"> Stone 1 <input class="input" type="number" id="stone1" step="any" placeholder="0"
                             onblur="stoneSoma(), total()"></p>
-                    <p class="stone"> Stone 2 <input class="input" type="number" id="stone2" placeholder="0"
+                    <p class="stone"> Stone 2 <input class="input" type="number" id="stone2" step="any" placeholder="0"
                             onblur="stoneSoma(), total()"></p>
 
                     <p class="stone" id="stoneTotal">Total: </p>
@@ -49,9 +51,9 @@
                     <p id="cieloTotal">Total: </p>
                     </p>
 
-                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" placeholder="0"
+                    <p class="dinheiro"> Dinheiro <input class="input" type="number" id="dinheiro" step="any" placeholder="0"
                             onblur="total()"></p>
-                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" placeholder="0"
+                    <p class="dinheiro"> Pix <input class="input" type="number" id="pix" step="any" placeholder="0"
                             onblur="total()"></p>
 
                     <p class="dinheiro" id="dinheiroTotal">Total: </p>
@@ -60,11 +62,11 @@
 
                 <button class="botao" onclick="total()">Total</button>
 
-                <br><br> <button class="btn" onclick="calculadora()"> Somar </button>
+                <br><br> <button class="botao" onclick="calculadora()"> Somar </button>
 
                 <input class="input" type="number" id="soma" placeholder="0" disabled="disabled">
 
-                <br><br> <button class="btn" onclick="calculadora2()"> Subtrair </button>
+                <br><br> <button class="botao" onclick="calculadora2()"> Subtrair </button>
 
             </div>
         </div>

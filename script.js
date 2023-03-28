@@ -1,7 +1,7 @@
 $(function () {  //avança para o próximo input ao apertar enter
     $('body').on('keydown', 'input, select', function (e) {
         if (e.which === 13) {
-            var self = $(this), form = self.parents('form:eq(0)'), focusable, next;
+            let self = $(this), form = self.parents('form:eq(0)'), focusable, next;
             focusable = form.find('input').filter(':visible');
             next = focusable.eq(focusable.index(this) + 1);
             if (next.length) {
@@ -16,11 +16,13 @@ function banrisulSoma() {
 
     let banri1 = parseFloat(document.getElementById('banri1').value);
     let banri2 = parseFloat(document.getElementById('banri2').value);
+    let banri3 = parseFloat(document.getElementById('banri3').value);
 
     banri1 = isNaN(banri1) ? 0 : banri1;
     banri2 = isNaN(banri2) ? 0 : banri2;
+    banri3 = isNaN(banri3) ? 0 : banri3;
 
-    let banrisulTotal = banri1 + banri2;
+    let banrisulTotal = banri1 + banri2 + banri3;
 
     let valorFormatado = banrisulTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
@@ -59,6 +61,7 @@ function total() {
     let stone2 = parseFloat(document.getElementById('stone2').value);
     let banri1 = parseFloat(document.getElementById('banri1').value);
     let banri2 = parseFloat(document.getElementById('banri2').value);
+    let banri3 = parseFloat(document.getElementById('banri3').value);
     let cielo = parseFloat(document.getElementById(`cielo`).value);
     let dinheiro = parseFloat(document.getElementById('dinheiro').value);
     let pix = parseFloat(document.getElementById('pix').value);
@@ -67,11 +70,12 @@ function total() {
     stone2 = isNaN(stone2) ? 0 : stone2;
     banri1 = isNaN(banri1) ? 0 : banri1;
     banri2 = isNaN(banri2) ? 0 : banri2;
+    banri3 = isNaN(banri3) ? 0 : banri3;
     cielo = isNaN(cielo) ? 0 : cielo;
     dinheiro = isNaN(dinheiro) ? 0 : dinheiro;
     pix = isNaN(pix) ? 0 : pix;
 
-    let total = stone1 + stone2 + banri1 + banri2 + cielo + dinheiro + pix;
+    let total = stone1 + stone2 + banri1 + banri2 + banri3 + cielo + dinheiro + pix;
 
     let valorFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
@@ -82,7 +86,7 @@ function total() {
     document.getElementById('total').innerHTML = `Total ${valorFormatado}`
 
     //Total maquininha
-    let totMaq = stone1 + stone2 + banri1 + banri2 + cielo;
+    let totMaq = stone1 + stone2 + banri1 + banri2 + banri3 + cielo;
     let totMaqui = totMaq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('mac').innerHTML = `Cartão: ${totMaqui.bold()}`;
 
