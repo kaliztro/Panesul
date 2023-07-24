@@ -22,6 +22,14 @@ body {
     margin-left: 10px; /* deixa o espaço entre os 2 blocos */ 
 }
 
+.container-de-paragrafos {
+    display: flex; /* deixa os paragrafos um ao lado do outro */
+}
+
+/* .paragrafo {
+    margin-right: 60px; /* Opcional: Adicione um espaço entre os parágrafos 
+} */
+
 .section1 {
     max-width: 40rem;
     margin: 0 auto;
@@ -91,5 +99,4 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type=number] { 
     -moz-appearance: textfield;
     appearance: textfield;
- 
- }
+}
