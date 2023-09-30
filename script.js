@@ -178,3 +178,43 @@ console.log("%c✋ Espere! 🛑", "font-family:Comic Sans MS; font-size: 60px; f
 console.log('%c🤬 O que você esta fazendo aqui?. cai fora!!', "font-family:Comic Sans MS; font-size: 20px; font-weight: bold; color: #7F7F7F; background: #fff; border: 1px solid #f3f3f3; border-radius: 5px; padding: 8px")
 console.log(`\n\n\n\n\n`)
 console.log("%cDesenvolvido por Kaliztro#4988", "font-family:Comic Sans MS; font-size:40px; font-weight:bold; color: #fff; padding: 30px")
+
+
+
+function FECHAR() {
+    const dialog = document.querySelector('dialog');
+    dialog.close();
+}
+
+function abrirModal() {
+    const dialog = document.querySelector('dialog');
+    dialog.showModal();
+
+}
+
+
+
+let soma = 0;
+
+function SOMAR() {
+    const numeroInput = document.getElementById("numeroInput");
+    const numero = parseFloat(numeroInput.value);
+
+    if (isNaN(numero)) {
+        alert("Por favor, insira um número válido.");
+    } else {
+        soma += numero;
+        numeroInput.value = "";
+        document.getElementById("resultado").textContent = `Total R$ ${soma}`;
+
+        if (numero === 0) {
+            FECHAR();
+        }
+    }
+
+    
+
+};
+
+
+

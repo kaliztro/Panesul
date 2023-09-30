@@ -26,10 +26,6 @@ body {
     display: flex; /* deixa os paragrafos um ao lado do outro */
 }
 
-/* .paragrafo {
-    margin-right: 60px; /* Opcional: Adicione um espaço entre os parágrafos 
-} */
-
 .section1 {
     max-width: 40rem;
     margin: 0 auto;
@@ -49,7 +45,7 @@ p {
 }
 
 p.stone {
-    color:green;
+    color:#20EC0E;
 }
 
 p.banrisul {

@@ -1,0 +1,49 @@
+/* Modal */
+
+.card {
+    width: 300px; min-width: 150px;
+    height: 150px; min-height: 100px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+    border: none;
+
+   }
+
+
+   .container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha os elementos no topo verticalmente */
+    height: 100vh;
+  }
+  
+  .card {
+    /* display: flex; */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: flex-start; /* Alinha os elementos à esquerda horizontalmente */
+  }
+  
+  .item {
+    margin: 10px;
+  }
+  
+  /* Alinha o primeiro botão à direita do input */
+  .buttons {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    width: 100%;
+    gap: 10px; /* Adiciona espaçamento entre os botões */
+  }
+  
+  /* Coloca o input e o primeiro botão na mesma linha */
+  .input-and-button {
+    display: inline-block;
+  }
+
+  .dialog-font {
+    font-family: "Comic Sans MS";
+    font-size: 14;
+  }
+
+
