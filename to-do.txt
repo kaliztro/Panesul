@@ -1,1 +1,2 @@
-adicionar mais aba pix
+adicionar mais abas pix
+mudar o titulo Maquininha para Entrada
