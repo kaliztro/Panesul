@@ -26,7 +26,8 @@ function banrisulSoma() {
 
     let valorFormatado = banrisulTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    document.getElementById('banrisulTotal').innerHTML = `Total: ${valorFormatado}`
+    document.getElementById('banrisulTotal').textContent = `Total: ${valorFormatado}`
+    document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 };
 
 function stoneSoma() {
@@ -41,7 +42,8 @@ function stoneSoma() {
 
     let valorFormatado = stoneTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    document.getElementById('stoneTotal').innerHTML = `Total: ${valorFormatado}`
+    document.getElementById('stoneTotal').textContent = `Total: ${valorFormatado}`
+    document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 };
 
 function cieloSoma() {
@@ -52,7 +54,8 @@ function cieloSoma() {
 
     let valorFormatado = cielo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-    document.getElementById('cieloTotal').innerHTML = `Total: ${valorFormatado}`
+    document.getElementById('cieloTotal').textContent = `Total: ${valorFormatado}`
+    document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 
 };
 
@@ -83,25 +86,27 @@ function total() {
     document.getElementById('soma').value = total;
 
     //aba Total
-    document.getElementById('total').innerHTML = `Total ${valorFormatado}`
+    document.getElementById('total').textContent = `Total ${valorFormatado}`
+    //adicionao o valor no dialog
+    document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 
     //Total maquininha
     let totMaq = stone1 + stone2 + banri1 + banri2 + banri3 + cielo;
     let totMaqui = totMaq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('mac').innerHTML = `Cartão: ${totMaqui.bold()}`;
+    document.getElementById('mac').textContent = `Cartão: ${totMaqui}`;
 
     //Total dinheiro
     let totDin = dinheiro + pix;
     let totDinh = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('din').innerHTML = `Dinheiro: ${totDinh.bold()}`;
+    document.getElementById('din').textContent = `Dinheiro: ${totDinh}`;
 
     //toal do dinheiro e pix
     let tDinPix = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    document.getElementById('dinheiroTotal').innerHTML = `Total: ${tDinPix}`;
+    document.getElementById('dinheiroTotal').textContent = `Total: ${tDinPix}`;
 
     //deixa o historico de soma e de subtração zerados
-    document.getElementById('resultadoSoma').innerHTML = ``
-    document.getElementById('resultadoSub').innerHTML = ``
+    document.getElementById('resultadoSoma').textContent = ``
+    document.getElementById('resultadoSub').textContent = ``
 
 
 };
@@ -152,7 +157,7 @@ function calculadora2() {
     while (true) {
         let entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
 
-        if (entrada == null || entrada == 0 ) { //se clicar em cancelar ou se digitar 0 ele fecha o loop
+        if (entrada == null || entrada == 0) { //se clicar em cancelar ou se digitar 0 ele fecha o loop
             break
         };
 
@@ -189,32 +194,46 @@ function FECHAR() {
 function abrirModal() {
     const dialog = document.querySelector('dialog');
     dialog.showModal();
-
 }
 
-
-
-let soma = 0;
-
 function SOMAR() {
-    const numeroInput = document.getElementById("numeroInput");
-    const numero = parseFloat(numeroInput.value);
+    let acumulador = parseFloat(document.getElementById('soma').value);
+    acumulador = isNaN(acumulador) ? 0 : acumulador;
 
-    if (isNaN(numero)) {
-        alert("Por favor, insira um número válido.");
-    } else {
-        soma += numero;
-        numeroInput.value = "";
-        document.getElementById("resultado").textContent = `Total R$ ${soma}`;
+    let historico = [];
 
-        if (numero === 0) {
-            FECHAR();
+    let histAnt = document.getElementById('resultadoSoma').textContent;
+    historico.push(histAnt);
+
+    while (true) {
+        let numeroInput = document.getElementById("numeroInput").value;
+
+        if (numeroInput === null || numeroInput === '') {
+            break;
         }
+
+        if (numeroInput == 0 || numeroInput == null) {
+            FECHAR()
+        }
+
+        let valor = parseFloat(numeroInput);
+        valor = isNaN(valor) ? 0 : valor;
+
+        if (valor != 0) {
+
+            acumulador += valor;
+            document.getElementById('soma').value = acumulador;
+
+            let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('total').textContent = `Total ${valorFormatado}`;
+
+            historico.push(` ${valor},`);
+            document.getElementById('resultadoSoma').innerHTML = historico.join(' ');
+
+            document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
+        }
+        document.getElementById("numeroInput").value = ''; // Limpa o input para o próximo valor
     }
 
-    
-
-};
-
-
+}
 
