@@ -12,75 +12,81 @@ $(function () {  //avança para o próximo input ao apertar enter
     });
 });
 
-function banrisulSoma() {
-
+function Maquininhas(){
+    let stone1 = parseFloat(document.getElementById('stone1').value);
+    let stone2 = parseFloat(document.getElementById('stone2').value);
     let banri1 = parseFloat(document.getElementById('banri1').value);
     let banri2 = parseFloat(document.getElementById('banri2').value);
     let banri3 = parseFloat(document.getElementById('banri3').value);
+    let cielo = parseFloat(document.getElementById(`cielo`).value);
 
-    banri1 = isNaN(banri1) ? 0 : banri1;
-    banri2 = isNaN(banri2) ? 0 : banri2;
-    banri3 = isNaN(banri3) ? 0 : banri3;
+    banri1 = validarNumero(banri1)
+    banri2 = validarNumero(banri2)
+    banri3 = validarNumero(banri3)
+    stone1 = validarNumero(stone1)
+    stone2 = validarNumero(stone2)
+    cielo = validarNumero(cielo)
 
-    let banrisulTotal = banri1 + banri2 + banri3;
+    let banrisulTotal = banri1 + banri2 + banri3
+    let stoneTotal = stone1 + stone2
 
-    let valorFormatado = banrisulTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let total = banrisulTotal + stoneTotal + cielo
+ 
+    return {
+        banrisul: banrisulTotal,
+        stone: stoneTotal,
+        cielo: cielo,
+        total: total
+    }
+}
+
+function validarNumero(numero) {
+    return isNaN(numero) ? 0 : numero;
+}
+
+function ValorFormatado(valor){
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function banrisulSoma() {
+    const maquininha = Maquininhas();
+
+    let valorFormatado = ValorFormatado(maquininha.banrisul)
 
     document.getElementById('banrisulTotal').textContent = `Total: ${valorFormatado}`
     document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 };
 
 function stoneSoma() {
+    const maquininha = Maquininhas();
 
-    let stone1 = parseFloat(document.getElementById('stone1').value);
-    let stone2 = parseFloat(document.getElementById('stone2').value);
-
-    stone1 = isNaN(stone1) ? 0 : stone1;
-    stone2 = isNaN(stone2) ? 0 : stone2;
-
-    let stoneTotal = stone1 + stone2;
-
-    let valorFormatado = stoneTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let valorFormatado = ValorFormatado(maquininha.stone)
 
     document.getElementById('stoneTotal').textContent = `Total: ${valorFormatado}`
     document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 };
 
 function cieloSoma() {
+    const maquininha = Maquininhas();
 
-    let cielo = parseFloat(document.getElementById(`cielo`).value);
-
-    cielo = isNaN(cielo) ? 0 : cielo;
-
-    let valorFormatado = cielo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let valorFormatado = ValorFormatado(maquininha.cielo)
 
     document.getElementById('cieloTotal').textContent = `Total: ${valorFormatado}`
     document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
-
 };
 
 function total() {
-    let stone1 = parseFloat(document.getElementById('stone1').value);
-    let stone2 = parseFloat(document.getElementById('stone2').value);
-    let banri1 = parseFloat(document.getElementById('banri1').value);
-    let banri2 = parseFloat(document.getElementById('banri2').value);
-    let banri3 = parseFloat(document.getElementById('banri3').value);
-    let cielo = parseFloat(document.getElementById(`cielo`).value);
     let dinheiro = parseFloat(document.getElementById('dinheiro').value);
     let pix = parseFloat(document.getElementById('pix').value);
 
-    stone1 = isNaN(stone1) ? 0 : stone1;
-    stone2 = isNaN(stone2) ? 0 : stone2;
-    banri1 = isNaN(banri1) ? 0 : banri1;
-    banri2 = isNaN(banri2) ? 0 : banri2;
-    banri3 = isNaN(banri3) ? 0 : banri3;
-    cielo = isNaN(cielo) ? 0 : cielo;
     dinheiro = isNaN(dinheiro) ? 0 : dinheiro;
     pix = isNaN(pix) ? 0 : pix;
 
-    let total = stone1 + stone2 + banri1 + banri2 + banri3 + cielo + dinheiro + pix;
+    const maquininha = Maquininhas();
 
-    let valorFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let total = maquininha.total + dinheiro + pix;
+
+    let valorFormatado = ValorFormatado(total)
 
     // adiciona o valor total no input sa soma
     document.getElementById('soma').value = total;
@@ -91,7 +97,7 @@ function total() {
     document.getElementById("dialog-resultado").textContent = `Total ${valorFormatado}`;
 
     //Total maquininha
-    let totMaq = stone1 + stone2 + banri1 + banri2 + banri3 + cielo;
+    let totMaq = maquininha.total;
     let totMaqui = totMaq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById('mac').textContent = `Cartão: ${totMaqui}`;
 
@@ -101,14 +107,12 @@ function total() {
     document.getElementById('din').textContent = `Dinheiro: ${totDinh}`;
 
     //toal do dinheiro e pix
-    let tDinPix = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let tDinPix = ValorFormatado(totDin)
     document.getElementById('dinheiroTotal').textContent = `Total: ${tDinPix}`;
 
     //deixa o historico de soma e de subtração zerados
     document.getElementById('resultadoSoma').textContent = ``
     document.getElementById('resultadoSub').textContent = ``
-
-
 };
 
 function calculadora() {
