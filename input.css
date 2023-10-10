@@ -1,49 +1,116 @@
-/* Modal */
+.input {
+    width: 10.1rem;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    border-radius: 5px;
+    background-color: rgb(119, 117, 111);
+    color: #ffffff;
+}
 
-.card {
-    width: 300px; min-width: 150px;
-    height: 150px; min-height: 100px;
-    border-radius: 30px;
-    background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-    border: none;
+input:focus {
+    outline: none;
+}
 
-   }
+/* Efeito para o input Banrisul */
 
+.banrisul-barra {
+    --border-after-color: #00a2ff;
+    position: relative;
+}
 
-   .container {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: flex-start; /* Alinha os elementos no topo verticalmente */
-    height: 100vh;
-  }
-  
-  .card {
-    /* display: flex; */
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    align-items: flex-start; /* Alinha os elementos à esquerda horizontalmente */
-  }
-  
-  .item {
-    margin: 10px;
-  }
-  
-  /* Alinha o primeiro botão à direita do input */
-  .buttons {
-    display: flex;
-    justify-content: flex-end; /* Alinha os botões à direita */
-    width: 100%;
-    gap: 10px; /* Adiciona espaçamento entre os botões */
-  }
-  
-  /* Coloca o input e o primeiro botão na mesma linha */
-  .input-and-button {
-    display: inline-block;
-  }
+.banrisul-barra-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 4.5rem;  /* inicio da animacao */
+    transition: 0.3s;
+}
 
-  .dialog-font {
-    font-family: "Comic Sans MS";
-    font-size: 14;
-  }
+input:focus~.banrisul-barra-border {
+    width: 9.8rem; /* controla o comprimento da animacao*/    
+}
 
+/* Efeito para o input Stone */
 
+.stone-barra {
+    --border-after-color: #20EC0E;
+    position: relative;
+}
+
+.stone-barra-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 3.4rem;
+    transition: 0.3s;
+}
+
+input:focus~.stone-barra-border {
+    width: 9.8rem; 
+}
+
+/* Efeito para o input Cielo */
+
+.cielo-barra {
+    --border-after-color: #000000;
+    position: relative;
+}
+
+.cielo-barra-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 3.3rem;
+    transition: 0.3s;
+}
+
+input:focus~.cielo-barra-border {
+    width: 10rem; 
+}
+
+/* Efeito para o input Dinheiro */
+
+.dinheiro-barra {
+    --border-after-color: #FFE500;
+    position: relative;
+}
+
+.dinheiro-barra-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 4rem;
+    transition: 0.3s;
+}
+
+input:focus~.dinheiro-barra-border {
+    width: 9.6rem; 
+}
+
+/* Efeito para o input Dinheiro */
+
+.pix-barra {
+    --border-after-color: #FFE500;
+    position: relative;
+}
+
+.pix-barra-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 1.8rem;
+    transition: 0.3s;
+}
+
+input:focus~.pix-barra-border {
+    width: 9.7rem; 
+}

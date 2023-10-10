@@ -1,0 +1,88 @@
+body {
+    background-color: #303131;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /* background-color: blueviolet; */
+    /* background-color: #303131; */
+}
+
+.box {
+    width: 20rem;
+    height: 42rem;
+    background-color: #2e2f30;
+    border-radius: 20px;
+}
+
+.box-itens {
+    margin-left: 2rem;
+}
+
+.titulo {
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.botao-entrada {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ADICIONAR EFEITO NO BOTAO  */
+
+
+p {
+    color: #ffffff;
+}
+
+.stone {
+    color: #20EC0E;
+}
+
+.banrisul {
+    color: #00a2ff;
+}
+
+.cielo {
+    color: #ffffff;
+}
+
+.dinheiro {
+    color: #FFE500;
+}
+
+/* remove os setinhas que acrescentam/diminuem um numero do imput */
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.card {
+    width: 300px; min-width: 150px;
+    height: 150px; min-height: 100px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+    border: none;
+  
+   }
+
