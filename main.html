@@ -1,8 +1,10 @@
-<html lang="pt-br">
+<!DOCTYPE html>
 
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="Kaliztro">
 
     <link rel="shortcut icon" href="./Panesul.png">
 
@@ -12,8 +14,8 @@
     <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="button.css">
 
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
 
 </head>
 
@@ -26,9 +28,9 @@
             <h1 class="titulo"><b>Entrada</b></h1>
 
             <div class="box-itens">
-                <form onsubmit="return false;">
+                <form action="" method="post">
                     <div class="banrisul-barra">
-                        <p class="banrisul">Banrisul 1 <input class="input" type="number" placeholder="0" min="0" onblur="" id="banri1" step="any" onblur="banrisulSoma(), total()"><span class="banrisul-barra-border"></span> </p>
+                        <p class="banrisul">Banrisul 1 <input class="input" type="number" placeholder="0" min="0" onblur="" id="banri1" step="any" onblur="banrisulSoma(), total()" ><span class="banrisul-barra-border"></span> </p>
                     </div>
                     <div class="banrisul-barra">
                         <p class="banrisul">Banrisul 2 <input class="input" type="number" placeholder="0" min="0" onblur="" id="banri2" step="any" onblur="banrisulSoma(), total()"><span class="banrisul-barra-border"></span> </p>
@@ -36,7 +38,7 @@
                     <div class="banrisul-barra">
                         <p class="banrisul">Banrisul 3 <input class="input" type="number" placeholder="0" min="0" onblur="" id="banri3" step="any" onblur="banrisulSoma(), total()"><span class="banrisul-barra-border"></span> </p>
                     </div>
-                    <p class="banrisul">Total</p>
+                    <p class="banrisul" id="banrisulTotal">Total</p>
 
                     <div class="stone-barra">
                         <p class="stone">Stone 1 <input class="input" type="number" placeholder="0" min="0" onblur="" id="stone1" onblur="stoneSoma(), total()"><span class="stone-barra-border"></span> </p>
@@ -44,7 +46,7 @@
                     <div class="stone-barra">
                         <p class="stone">Stone 2 <input class="input" type="number" placeholder="0" min="0" onblur="" id="stone2" onblur="stoneSoma(), total()"><span class="stone-barra-border"></span> </p>
                     </div>
-                    <p class="stone">Total</p>
+                    <p class="stone" id="stoneTotal">Total</p>
 
                     <div class="cielo-barra">
                     <p class="cielo">Cielo 1 <input class="input" type="number" placeholder="0" min="0" onblur="" id="cielo1" onblur="cieloSoma(), total()"><span class="cielo-barra-border"></span> </p>
@@ -52,7 +54,7 @@
                     <div class="cielo-barra">
                     <p class="cielo">Cielo 2 <input class="input" type="number" placeholder="0" min="0" onblur="" id="cielo2" onblur="cieloSoma(), total()"><span class="cielo-barra-border"></span> </p>
                     </div>
-                    <p class="cielo">Total</p>
+                    <p class="cielo" id="cieloTotal">Total</p>
 
                     <div class="dinheiro-barra">
                     <p class="dinheiro">Dinheiro <input class="input" type="number" placeholder="0" min="0" onblur="" id="dinheiro" onblur="total()"><span class="dinheiro-barra-border"></span> </p>
@@ -60,18 +62,18 @@
                     <div class="pix-barra">
                     <p class="dinheiro">Pix <input class="input" type="number" placeholder="0" min="0" onblur="" id="pix" onblur="total()"><span class="pix-barra-border"></span> </p>
                     </div>
-                    <p class="dinheiro">Total</p>
-
-                    <p class="botao-entrada">
-                        <button class="button" onclick="abrirModal()">Somar</button>
-                        <button class="button">Subtrair</button>
-                    </p>
-
-                    <p class="botao-entrada">
-                        <button class="red-button">Limpar soma</button>
-                        <button class="red-button">Limpar tudo</button>
-                    </p>
+                    <p class="dinheiro" id="dinheiroTotal">Total</p>
                 </form>
+                
+                    <p class="botao-entrada">
+                    <button class="button" onclick="abrirModal()">Somar</button>
+                    <button class="button">Subtrair</button>
+                    </p>
+                
+                <p class="botao-entrada">
+                    <button class="red-button" onclick="total()">Limpar soma</button>
+                    <button class="red-button">Limpar tudo</button>
+                </p>
             </div>
 
         </div>
@@ -95,7 +97,7 @@
             <dialog class="card">
                 <div class="form">
                     <p class="dialog-font">Digite o valor a ser somado ou 0 para sair</p>
-                    <input class="input-" required="" type="number" id="numeroInput" onkeydown="if (event.key === 'Enter') SOMAR()">
+                    <input class="input-" type="number" id="numeroInput" onkeydown="if (event.key === 'Enter') SOMAR()">
                     <button class="botao" onclick="SOMAR()">Continuar</button>
                     <button class="botao" onclick="FECHAR()">Sair</button>
                 </div>
