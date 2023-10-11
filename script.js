@@ -12,13 +12,15 @@ $(function () {  //avança para o próximo input ao apertar enter
     });
 });
 
+let somaTotal = 0;
+
 function Maquininhas(){
     let stone1 = parseFloat(document.getElementById('stone1').value);
     let stone2 = parseFloat(document.getElementById('stone2').value);
     let banri1 = parseFloat(document.getElementById('banri1').value);
     let banri2 = parseFloat(document.getElementById('banri2').value);
     let banri3 = parseFloat(document.getElementById('banri3').value);
-    let cielo = parseFloat(document.getElementById(`cielo`).value);
+    let cielo = parseFloat(document.getElementById(`cielo1`).value);
 
     banri1 = validarNumero(banri1)
     banri2 = validarNumero(banri2)
@@ -89,7 +91,7 @@ function total() {
     let valorFormatado = ValorFormatado(total)
 
     // adiciona o valor total no input sa soma
-    document.getElementById('soma').value = total;
+    somaTotal =+ total;
 
     //aba Total
     document.getElementById('total').textContent = `Total ${valorFormatado}`
@@ -115,81 +117,6 @@ function total() {
     document.getElementById('resultadoSub').textContent = ``
 };
 
-function calculadora() {
-    let acumulador = parseFloat(document.getElementById('soma').value);
-
-    acumulador = isNaN(acumulador) ? 0 : acumulador; // se n tiver acumulador ele valera 0
-    let historico = []; // array vazia que sera usada para armazenar os valores somados 
-
-    let histAnt = document.getElementById('resultadoSoma').innerHTML
-    historico.push(histAnt) // adicona na array os valores somados anterirormente. "isso mantem o historico quando é somado um novo valor"
-
-    while (true) {
-        let entrada = prompt(`Digite o valor à ser somado ou 0 para sair`); //prompt("arg01", "arg02") //arg02 mostra um texto na caixa
-
-        if (entrada == null || entrada == 0) { //se clicar em cancelar ou digitar 0 ele fecha o loop
-            break
-        };
-
-        let valor = parseFloat(entrada) //converte a entrada de string para numero
-
-        valor = isNaN(valor) ? 0 : valor; //se n for digitado nada o valor fica 0
-
-        acumulador += valor; //soma os valores
-        document.getElementById('soma').value = acumulador //adiciona o valor na tag soma
-
-        let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); //converte o resultado para o formato br
-        document.getElementById('total').innerHTML = `Total ${valorFormatado}` //adiciona o resultado em BR na tag total
-
-        historico.push(valor) // adiciona os valores digitados em uma array
-        document.getElementById('resultadoSoma').innerHTML = historico;
-
-        alert(`total ${valorFormatado}`); //mostra o valor
-
-    };
-};
-
-function calculadora2() {
-    let acumulador = parseFloat(document.getElementById('soma').value);
-
-    acumulador = isNaN(acumulador) ? 0 : acumulador;
-    let historico = [];
-
-    let histAnt = document.getElementById('resultadoSub').innerHTML
-    historico.push(histAnt) // adicona na array os valores subtraidos anterirormente. "isso mantem o historico quando é subtraido um novo valor"
-
-    while (true) {
-        let entrada = prompt(`Digite o valor à ser Subtraido ou 0 para sair`);
-
-        if (entrada == null || entrada == 0) { //se clicar em cancelar ou se digitar 0 ele fecha o loop
-            break
-        };
-
-        let valor = parseFloat(entrada)
-        acumulador -= valor; // diminui os valores
-
-        valor = isNaN(valor) ? 0 : valor;
-
-        document.getElementById('soma').value = acumulador
-
-        let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        document.getElementById('total').innerHTML = `Total ${valorFormatado}`
-
-        historico.push(valor) // adiciona os valores digitados em uma array
-        document.getElementById('resultadoSub').innerHTML = historico
-
-        alert(`total ${valorFormatado}`);
-
-    }
-}
-
-console.log("%c✋ Espere! 🛑", "font-family:Comic Sans MS; font-size: 60px; font-weight: bold; color: red; background: #fff; border: 1px solid #f3f3f3; border-radius: 10px; padding: 15px")
-console.log('%c🤬 O que você esta fazendo aqui?. cai fora!!', "font-family:Comic Sans MS; font-size: 20px; font-weight: bold; color: #7F7F7F; background: #fff; border: 1px solid #f3f3f3; border-radius: 5px; padding: 8px")
-console.log(`\n\n\n\n\n`)
-console.log("%cDesenvolvido por Kaliztro#4988", "font-family:Comic Sans MS; font-size:40px; font-weight:bold; color: #fff; padding: 30px")
-
-
-
 function FECHAR() {
     const dialog = document.querySelector('dialog');
     dialog.close();
@@ -201,7 +128,7 @@ function abrirModal() {
 }
 
 function SOMAR() {
-    let acumulador = parseFloat(document.getElementById('soma').value);
+    let acumulador = somaTotal;
     acumulador = isNaN(acumulador) ? 0 : acumulador;
 
     let historico = [];
@@ -226,7 +153,7 @@ function SOMAR() {
         if (valor != 0) {
 
             acumulador += valor;
-            document.getElementById('soma').value = acumulador;
+            somaTotal =+ acumulador;
 
             let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('total').textContent = `Total ${valorFormatado}`;
@@ -238,6 +165,13 @@ function SOMAR() {
         }
         document.getElementById("numeroInput").value = ''; // Limpa o input para o próximo valor
     }
-
 }
+
+
+
+console.log("%c✋ Espere! 🛑", "font-family:Comic Sans MS; font-size: 60px; font-weight: bold; color: red; background: #fff; border: 1px solid #f3f3f3; border-radius: 10px; padding: 15px")
+console.log('%c🤬 O que você esta fazendo aqui?. cai fora!!', "font-family:Comic Sans MS; font-size: 20px; font-weight: bold; color: #7F7F7F; background: #fff; border: 1px solid #f3f3f3; border-radius: 5px; padding: 8px")
+console.log(`\n\n\n\n\n`)
+console.log("%cDesenvolvido por Kaliztro#4988", "font-family:Comic Sans MS; font-size:40px; font-weight:bold; color: #fff; padding: 30px")
+
 
