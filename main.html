@@ -6,27 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Kaliztro">
 
-    <link rel="shortcut icon" href="./Panesul.png">
+    <link rel="shortcut icon" href="./img/Panesul.png">
 
     <title>Panesul - Fechamento</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="input.css">
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <link rel="stylesheet" href="./css/button.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="./javascript/script.js"></script>
 
 </head>
 
 <body>
-
     <div class="container">
-
         <div class="box">
-
             <h1 class="titulo"><b>Entrada</b></h1>
-
             <div class="box-itens">
                 <form action="" method="post">
                     <div class="banrisul-barra">
@@ -61,53 +57,49 @@
                     </div>
                     <p class="dinheiro" id="dinheiroTotal">Total</p>
                 </form>
-                
                     <p class="botao-entrada">
-                    <button class="button" onclick="abrirModal()">Somar</button>
-                    <button class="button">Subtrair</button>
+                    <button class="button" onclick="abrirModalSoma()">Somar</button>
+                    <button class="button" onclick="abrirModalSubtracao()">Subtrair</button>
                     </p>
-                
-                <p class="botao-entrada">
+                    <p class="botao-entrada">
                     <button class="red-button" onclick="total()">Limpar soma</button>
-                    <button class="red-button">Limpar tudo</button>
+                    <button class="red-button" onclick="location.reload()">Limpar tudo</button>
                 </p>
             </div>
-
         </div>
-
         <div class="box">
             <h1 class="titulo" id="total"> Total</h1>
             <div class="box-itens">
                 <p class="maqui" id="mac">Cartão: R$ 0</p>
                 <p class="dinh" id="din">Dinheiro: R$ 0</p>
-
                 <p id="valoresSomados">Historico de soma: R$ </p>
                 <p id="resultadoSoma"></p>
-
                 <p id="valoresSubtraidos">Historico de subtração: R$ </p>
                 <p id="resultadoSub"></p>
-
             </div>
         </div>
-
         <div>
-            <dialog class="card">
+            <dialog class="card" id="dialog-soma">
                 <div class="form">
                     <p class="dialog-font">Digite o valor a ser somado ou 0 para sair</p>
-                    <input class="input-" type="number" id="numeroInput" onkeydown="if (event.key === 'Enter') SOMAR()">
-                    <button class="botao" onclick="SOMAR()">Continuar</button>
-                    <button class="botao" onclick="FECHAR()">Sair</button>
+                    <input class="input-card-soma" type="number" id="somaInput" onkeydown="if (event.key === 'Enter') somar()">
+                    <button class="green-button" onclick="somar()">Continuar</button>
+                    <button class="red-button" onclick="fecharSoma()">Sair</button>
                 </div>
-                <p id="dialog-resultado">Total</p>
+                <p id="dialog-soma-resultado">Total</p>
             </dialog>
         </div>
-
-
-        <!-- <div class="box"></div> -->
-
-
-
-
+        <div>
+            <dialog class="card" id="dialog-Subtra">
+                <div class="form">
+                    <p class="dialog-font">Digite o valor a ser subtraido ou 0 para sair</p>
+                    <input class="input-card-soma" type="number" id="subtracaoInput" onkeydown="if (event.key === 'Enter') subtrair()">
+                    <button class="green-button" onclick="subtrair()">Continuar</button>
+                    <button class="red-button" onclick="fecharSubtracao()">Sair</button>
+                </div>
+                <p id="dialog-sub-resultado">Total</p>
+            </dialog>
+        </div>
     </div>
 
 </body>

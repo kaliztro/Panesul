@@ -11,9 +11,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    /* background-color: blueviolet; */
-    /* background-color: #303131; */
 }
 
 .box {
@@ -41,9 +38,6 @@ button {
     gap: 10px;
 }
 
-/* ADICIONAR EFEITO NO BOTAO  */
-
-
 p {
     color: #ffffff;
 }
@@ -64,25 +58,12 @@ p {
     color: #FFE500;
 }
 
-/* remove os setinhas que acrescentam/diminuem um numero do imput */
-
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-
 .card {
-    width: 300px; min-width: 150px;
-    height: 150px; min-height: 100px;
+    width: 350px; min-width: 175px;
+    height: 150px; min-height: 125px;
     border-radius: 30px;
     background: #212121;
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
     border: none;
-  
-   }
+}
 

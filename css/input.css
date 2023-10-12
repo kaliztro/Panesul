@@ -10,6 +10,18 @@ input:focus {
     outline: none;
 }
 
+/* remove os setinhas que acrescentam/diminuem um numero do imput */
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
 /* Efeito para o input Banrisul */
 
 .banrisul-barra {
@@ -28,7 +40,7 @@ input:focus {
 }
 
 input:focus~.banrisul-barra-border {
-    width: 9.8rem; /* controla o comprimento da animacao*/    
+    width: 10.3rem; /* controla o comprimento da animacao*/    
 }
 
 /* Efeito para o input Stone */
@@ -49,7 +61,7 @@ input:focus~.banrisul-barra-border {
 }
 
 input:focus~.stone-barra-border {
-    width: 9.8rem; 
+    width: 10.3rem; 
 }
 
 /* Efeito para o input Cielo */
@@ -70,7 +82,7 @@ input:focus~.stone-barra-border {
 }
 
 input:focus~.cielo-barra-border {
-    width: 10rem; 
+    width: 10.3rem; 
 }
 
 /* Efeito para o input Dinheiro */
@@ -91,7 +103,7 @@ input:focus~.cielo-barra-border {
 }
 
 input:focus~.dinheiro-barra-border {
-    width: 9.6rem; 
+    width: 10.2rem; 
 }
 
 /* Efeito para o input Dinheiro */
@@ -112,5 +124,27 @@ input:focus~.dinheiro-barra-border {
 }
 
 input:focus~.pix-barra-border {
-    width: 9.7rem; 
+    width: 10.2rem; 
+}
+
+/* Efeito para o input input-card-soma */
+
+.input-card-soma {
+    width: 150px;
+    height: 19px;
+    margin-top: 3px;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    border-radius: 5px;
+    background-color: rgb(119, 117, 111);
+    color: #ffffff;
+    caret-color: #20EC0E;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-card-soma:focus {
+    border-color: #0bf32a;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
