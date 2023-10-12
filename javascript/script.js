@@ -20,24 +20,27 @@ function Maquininhas(){
     let banri1 = parseFloat(document.getElementById('banri1').value);
     let banri2 = parseFloat(document.getElementById('banri2').value);
     let banri3 = parseFloat(document.getElementById('banri3').value);
-    let cielo = parseFloat(document.getElementById(`cielo1`).value);
+    let cielo1 = parseFloat(document.getElementById('cielo1').value);
+    let cielo2 = parseFloat(document.getElementById('cielo2').value);
 
     banri1 = validarNumero(banri1)
     banri2 = validarNumero(banri2)
     banri3 = validarNumero(banri3)
     stone1 = validarNumero(stone1)
     stone2 = validarNumero(stone2)
-    cielo = validarNumero(cielo)
+    cielo1 = validarNumero(cielo1)
+    cielo2 = validarNumero(cielo2)
 
     let banrisulTotal = banri1 + banri2 + banri3
     let stoneTotal = stone1 + stone2
+    let cieloTotal = cielo1 + cielo2
 
-    let total = banrisulTotal + stoneTotal + cielo
+    let total = banrisulTotal + stoneTotal + cieloTotal
  
     return {
         banrisul: banrisulTotal,
         stone: stoneTotal,
-        cielo: cielo,
+        cielo: cieloTotal,
         total: total
     }
 }
