@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.add('dark-theme');
     } else {
         body.classList.add('light-theme');
+        document.getElementById('theme-toggle').checked = true
     }
 
     $(document).ready(function() {
