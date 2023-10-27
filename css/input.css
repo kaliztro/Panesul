@@ -6,9 +6,15 @@
     color: #ffffff;
 }
 
-input:focus {
-    outline: none;
+::placeholder {
+    color: #ffffff;
+
+    input:focus {
+        outline: none;
+    }
 }
+
+textarea:focus, input:focus { box-shadow: 0 0 0 0; outline: 0; }
 
 /* remove os setinhas que acrescentam/diminuem um numero do imput */
 
