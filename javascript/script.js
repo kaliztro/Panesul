@@ -213,12 +213,12 @@ function subtrair() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    let body = document.body;
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        body.classList.add('dark-theme');
-    } else {
-        body.classList.add('light-theme');
-    }
+    // let body = document.body;
+    // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    //     body.classList.add('dark-theme');
+    // } else {
+    //     body.classList.add('light-theme');
+    // }
 
     $(document).ready(function() {
         var ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#dinheiro', '#pix'];
