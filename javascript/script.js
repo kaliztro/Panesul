@@ -14,7 +14,7 @@ $(function () {  //avança para o próximo input ao apertar enter
 
 let somaTotal = 0;
 
-function Maquininhas(){
+function Maquininhas() {
     let banri1 = validarNumero(element('banri1'))
     let banri2 = validarNumero(element('banri2'))
     let banri3 = validarNumero(element('banri3'))
@@ -28,7 +28,7 @@ function Maquininhas(){
     let cieloTotal = cielo1 + cielo2
 
     let total = banrisulTotal + stoneTotal + cieloTotal
- 
+
     return {
         banrisul: banrisulTotal,
         stone: stoneTotal,
@@ -38,7 +38,10 @@ function Maquininhas(){
 }
 
 function element(elemento) {
-    return parseFloat(document.getElementById(elemento).value);
+    let valorString = document.getElementById(elemento).value;
+    valorString = valorString.replace(/\./g, '');
+    valorString = valorString.replace(',', '.');
+    return parseFloat(valorString);
 }
 
 function validarNumero(numero) {
@@ -52,7 +55,7 @@ function ValorFormatado(valor) {
 
 function banrisulSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().banrisul)
-    
+
     document.getElementById('banrisulTotal').textContent = `Total: ${valorFormatado}`
     document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
     document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
@@ -70,7 +73,7 @@ function stoneSoma() {
 
 function cieloSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().cielo)
-    
+
     document.getElementById('cieloTotal').textContent = `Total: ${valorFormatado}`
     document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
     document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
@@ -86,29 +89,29 @@ function total() {
 
     somaTotal =+ total;
 
-      //aba Total
-      document.getElementById('total').textContent = `Total ${valorFormatado}`
-      //adicionao o valor no dialog
-      document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-      document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
-  
-      //Total maquininha
-      let totMaq = Maquininhas().total;
-      let totMaqui = totMaq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-      document.getElementById('mac').textContent = `Cartão: ${totMaqui}`;
-  
-      //Total dinheiro
-      let totDin = dinheiro + pix;
-      let totDinh = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-      document.getElementById('din').textContent = `Dinheiro: ${totDinh}`;
-  
-      //toal do dinheiro e pix
-      let tDinPix = ValorFormatado(totDin)
-      document.getElementById('dinheiroTotal').textContent = `Total: ${tDinPix}`;
-  
-      //deixa o historico de soma e de subtração zerados
-      document.getElementById('resultadoSoma').textContent = ``
-      document.getElementById('resultadoSub').textContent = ``
+    //aba Total
+    document.getElementById('total').textContent = `Total ${valorFormatado}`
+    //adicionao o valor no dialog
+    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+
+    //Total maquininha
+    let totMaq = Maquininhas().total;
+    let totMaqui = totMaq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('mac').textContent = `Cartão: ${totMaqui}`;
+
+    //Total dinheiro
+    let totDin = dinheiro + pix;
+    let totDinh = totDin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    document.getElementById('din').textContent = `Dinheiro: ${totDinh}`;
+
+    //toal do dinheiro e pix
+    let tDinPix = ValorFormatado(totDin)
+    document.getElementById('dinheiroTotal').textContent = `Total: ${tDinPix}`;
+
+    //deixa o historico de soma e de subtração zerados
+    document.getElementById('resultadoSoma').textContent = ``
+    document.getElementById('resultadoSub').textContent = ``
 }
 
 function fecharSoma() {
@@ -171,7 +174,7 @@ function somar() {
 }
 
 function subtrair() {
-    let acumulador =  validarNumero(somaTotal);;
+    let acumulador = validarNumero(somaTotal);
 
     let historico = [];
 
@@ -208,6 +211,37 @@ function subtrair() {
         document.getElementById("subtracaoInput").value = ''; // Limpa o input para o próximo valor
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    let body = document.body;
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        body.classList.add('dark-theme');
+    } else {
+        body.classList.add('light-theme');
+    }
+
+    $(document).ready(function() {
+        var ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#dinheiro', '#pix'];
+    
+        for (var i = 0; i < ids.length; i++) {
+          $(ids[i]).mask('000.000.000.000.000,00', { reverse: true });
+        }
+      });
+})
+
+function alterarTema() {
+    let body = document.body;
+
+    if (body.classList.contains('light-theme')) {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+    } else {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+    }
+}
+
+
 
 
 console.log("%c✋ Espere! 🛑", "font-family:Comic Sans MS; font-size: 60px; font-weight: bold; color: red; background: #fff; border: 1px solid #f3f3f3; border-radius: 10px; padding: 15px")

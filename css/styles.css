@@ -1,5 +1,6 @@
-body {
+body.dark-theme {
     background-color: #303131;
+    color: #fff;
 }
 
 button {
@@ -18,7 +19,10 @@ button {
     height: 42rem;
     background-color: #2e2f30;
     border-radius: 20px;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+    border: none;
 }
+
 
 .box-itens {
     margin-left: 2rem;
@@ -65,5 +69,39 @@ p {
     background: #212121;
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
     border: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-left: 30px;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px; 
+    transition: color 0.3s;
+    &:hover {
+        color: #ff5733;
+    }
+} 
+
+label.ui-switch {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
 }
 
