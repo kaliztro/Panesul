@@ -22,17 +22,21 @@ function Maquininhas() {
     let stone2 = validarNumero(element('stone2'))
     let cielo1 = validarNumero(element('cielo1'))
     let cielo2 = validarNumero(element('cielo2'))
+    let caixa = validarNumero(element('caixa'))
 
     let banrisulTotal = banri1 + banri2 + banri3
     let stoneTotal = stone1 + stone2
     let cieloTotal = cielo1 + cielo2
+    let caixaTotal = caixa
 
-    let total = banrisulTotal + stoneTotal + cieloTotal
+
+    let total = banrisulTotal + stoneTotal + cieloTotal + caixaTotal
 
     return {
         banrisul: banrisulTotal,
         stone: stoneTotal,
         cielo: cieloTotal,
+        caixa: caixaTotal,
         total: total
     }
 }
@@ -75,6 +79,15 @@ function cieloSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().cielo)
 
     document.getElementById('cieloTotal').textContent = `Total: ${valorFormatado}`
+    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+    total()
+};
+
+function caixaSoma() {
+    let valorFormatado = ValorFormatado(Maquininhas().caixa)
+
+    document.getElementById('caixaTotal').textContent = `Total: ${valorFormatado}`
     document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
     document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
     total()
@@ -222,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     $(document).ready(function() {
-        var ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#dinheiro', '#pix'];
+        var ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#caixa', '#dinheiro', '#pix'];
     
         for (var i = 0; i < ids.length; i++) {
           $(ids[i]).mask('000.000.000.000.000,00', { reverse: true });
