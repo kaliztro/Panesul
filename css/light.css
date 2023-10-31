@@ -13,11 +13,6 @@ body.light-theme .box {
     box-shadow: 15px 15px 30px rgb(128, 124, 124), -15px -15px 30px rgb(114, 106, 106);
 }
 
-body.light-theme .box-resultado {
-    background-color: #7D7C7C;
-    box-shadow: 15px 15px 30px rgb(128, 124, 124), -15px -15px 30px rgb(114, 106, 106);
-}
-
 body.light-theme .input {
     background-color: #ffffff;
     color: #000000;

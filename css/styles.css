@@ -23,17 +23,6 @@ button {
     border: none;
 }
 
-.box-resultado {
-    min-width: 20rem;
-    width: 25rem;
-    height: 45rem;
-    background-color: #2e2f30;
-    border-radius: 20px;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
-    border: none;
-}
-
-
 .box-itens {
     margin-left: 2rem;
 }
