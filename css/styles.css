@@ -35,6 +35,10 @@ button {
 
 }
 
+.total {
+    color: #ffffff;
+}
+
 .botao-entrada {
     display: flex;
     justify-content: center;
