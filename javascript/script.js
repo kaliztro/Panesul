@@ -60,36 +60,36 @@ function ValorFormatado(valor) {
 function banrisulSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().banrisul)
 
-    document.getElementById('banrisulTotal').textContent = `Total: ${valorFormatado}`
-    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById('banrisulTotal').textContent = `Subtotal: ${valorFormatado}`
+    document.getElementById("dialog-soma-resultado").textContent = `Subtotal: ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Subtotal: ${valorFormatado}`;
     total()
 };
 
 function stoneSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().stone)
 
-    document.getElementById('stoneTotal').textContent = `Total: ${valorFormatado}`
-    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById('stoneTotal').textContent = `Subtotal: ${valorFormatado}`
+    document.getElementById("dialog-soma-resultado").textContent = `Subtotal: ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Subtotal: ${valorFormatado}`;
     total()
 };
 
 function cieloSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().cielo)
 
-    document.getElementById('cieloTotal').textContent = `Total: ${valorFormatado}`
-    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById('cieloTotal').textContent = `Subtotal: ${valorFormatado}`
+    document.getElementById("dialog-soma-resultado").textContent = `Subtotal: ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Subtotal: ${valorFormatado}`;
     total()
 };
 
 function caixaSoma() {
     let valorFormatado = ValorFormatado(Maquininhas().caixa)
 
-    document.getElementById('caixaTotal').textContent = `Total: ${valorFormatado}`
-    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById('caixaTotal').textContent = `Subtotal: ${valorFormatado}`
+    document.getElementById("dialog-soma-resultado").textContent = `Subtotal: ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Subtotal: ${valorFormatado}`;
     total()
 };
 
@@ -103,10 +103,10 @@ function total() {
     somaTotal =+ total;
 
     //aba Total
-    document.getElementById('total').textContent = `Total ${valorFormatado}`
+    document.getElementById('total').textContent = `Total: ${valorFormatado}`
     //adicionao o valor no dialog
-    document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-    document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+    document.getElementById("dialog-soma-resultado").textContent = `Subtotal: ${valorFormatado}`;
+    document.getElementById("dialog-sub-resultado").textContent = `Subtotal: ${valorFormatado}`;
 
     //Total maquininha
     let totMaq = Maquininhas().total;
@@ -120,7 +120,7 @@ function total() {
 
     //toal do dinheiro e pix
     let tDinPix = ValorFormatado(totDin)
-    document.getElementById('dinheiroTotal').textContent = `Total: ${tDinPix}`;
+    document.getElementById('dinheiroTotal').textContent = `Subtotal: ${tDinPix}`;
 
     //deixa o historico de soma e de subtração zerados
     document.getElementById('resultadoSoma').textContent = ``
@@ -179,8 +179,8 @@ function somar() {
             historico.push(` ${valor},`);
             document.getElementById('resultadoSoma').textContent = historico.join(' ');
 
-            document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
-            document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
+            document.getElementById("dialog-soma-resultado").textContent = `Subotal ${valorFormatado}`;
+            document.getElementById("dialog-sub-resultado").textContent = `Subotal ${valorFormatado}`;
         }
         document.getElementById("somaInput").value = ''; // Limpa o input para o próximo valor
     }
@@ -218,8 +218,8 @@ function subtrair() {
             historico.push(` ${valor},`);
             document.getElementById('resultadoSub').textContent = historico.join(' ');
 
-            document.getElementById("dialog-sub-resultado").textContent = `Total ${valorFormatado}`;
-            document.getElementById("dialog-soma-resultado").textContent = `Total ${valorFormatado}`;
+            document.getElementById("dialog-sub-resultado").textContent = `Subotal ${valorFormatado}`;
+            document.getElementById("dialog-soma-resultado").textContent = `Subotal ${valorFormatado}`;
         }
         document.getElementById("subtracaoInput").value = ''; // Limpa o input para o próximo valor
     }
