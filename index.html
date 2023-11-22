@@ -10,23 +10,25 @@
 
     <title>Panesul - Fechamento</title>
 
-
-
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/light.css">
     <link rel="stylesheet" href="css/input.css">
     <link rel="stylesheet" href="css/button.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Slab:wght@300&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
     <script src="javascript/script.js"></script>
 
-    
 </head>
 
 <body>
     <nav>
+        <!-- <a> <img href="/img/Panesul.png" height="30" width="30"> </a> -->
         <ul>
             <li><a href="https://github.com/kaliztro/Panesul" target="_blank">Github</a></li>
             <li><a href="https://github.com/kaliztro/Panesul/releases" target="_blank">Download</a></li>
@@ -38,47 +40,73 @@
             </div>
         </label>
     </nav>
-    <div class="container">
-        <div class="box">
-            <h1 class="titulo"><b>Entrada</b></h1>
+        <main>
+            <div class="container">
+                <div class="box">
+                    <h1 class="titulo"><b>Entrada</b></h1>
             <div class="box-itens">
-                <form action="" method="post">
-                    <div class="banrisul-barra">
-                        <p class="banrisul">Banrisul 1 <input class="input" type="text" id="banri1" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span> </p>
+                <form>
+                    <div class="banrisul-barra">       <!-- olhar video formulario do santander dev,   usar fonte roboto ou Lato-->
+                    <label class="banrisul" for="banri1">Banrisul 1</label>
+                    <input class="input" type="text" id="banri1" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span> 
                     </div>
+
                     <div class="banrisul-barra">
-                        <p class="banrisul">Banrisul 2 <input class="input" type="text" id="banri2" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span> </p>
+                        <label class="banrisul" for="banri2">Banrisul 2</label>
+                        <input class="input" type="text" id="banri2" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span>
                     </div>
+
                     <div class="banrisul-barra">
-                        <p class="banrisul">Banrisul 3 <input class="input" type="text" id="banri3" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span> </p>
+                        <label class="banrisul" for="banri3">Banrisul 3</label>
+                        <input class="input" type="text" id="banri3" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span>
                     </div>
+
                     <p class="banrisul" id="banrisulTotal">Subtotal:</p>
+                    
                     <div class="stone-barra">
-                        <p class="stone">Stone 1 <input class="input" type="text" id="stone1" step="any" placeholder="0" onblur="stoneSoma()" min="0"><span class="stone-barra-border"></span> </p>
+                        <label class="stone" for="stone1">Stone 1 </label>
+                        <input class="input" type="text" id="stone1" step="any" placeholder="0" onblur="stoneSoma()" min="0"><span class="stone-barra-border"></span>
                     </div>
                     <div class="stone-barra">
-                        <p class="stone">Stone 2 <input class="input" type="text" id="stone2" step="any" placeholder="0" onblur="stoneSoma()" min="0"  ><span class="stone-barra-border"></span> </p>
+                        <label class="stone" for="stone2">Stone 2 </label>
+                        <input class="input" type="text" id="stone2" step="any" placeholder="0" onblur="stoneSoma()" min="0"  ><span class="stone-barra-border"></span>
                     </div>
+
                     <p class="stone" id="stoneTotal">Subtotal:</p>
+
                     <div class="cielo-barra">
-                        <p class="cielo">Cielo 1 <input class="input" type="text" id="cielo1" step="any" placeholder="0" onblur="cieloSoma()" min="0"><span class="cielo-barra-border"></span> </p>
+                        <label class="cielo" for="cielo1"> Cielo 1</label>
+                        <input class="input" type="text" id="cielo1" step="any" placeholder="0" onblur="cieloSoma()" min="0"><span class="cielo-barra-border"></span>
                     </div>
+
                     <div class="cielo-barra">
-                        <p class="cielo">Cielo 2 <input class="input" type="text" step="any" id="cielo2" placeholder="0" onblur="cieloSoma()" min="0"><span class="cielo-barra-border"></span> </p>
+                        <label class="cielo" for="cielo2"> Cielo 2</label>
+                        <input class="input" type="text" step="any" id="cielo2" placeholder="0" onblur="cieloSoma()" min="0"><span class="cielo-barra-border"></span>
                     </div>
+
                     <p class="cielo" id="cieloTotal">Subtotal:</p>
+
                     <div class="caixa-barra">
-                        <p class="caixa">Caixa <input class="input" type="text" step="any" id="caixa" placeholder="0" onblur="caixaSoma()" min="0"><span class="caixa-barra-border"></span> </p>
+                        <label class="caixa" for="caixa"> Caixa</label>
+                        <input class="input" type="text" step="any" id="caixa" placeholder="0" onblur="caixaSoma()" min="0"><span class="caixa-barra-border"></span>
                     </div>
+
                     <p class="caixa" id="caixaTotal">Subtotal:</p>
+
                     <div class="dinheiro-barra">
-                        <p class="dinheiro">Dinheiro <input class="input" type="text" step="any" id="dinheiro" placeholder="0" onblur="total()" min="0"><span class="dinheiro-barra-border"></span> </p>
+                        <label class="dinheiro" for="dinheiro"> Dinheiro</label>
+                        <input class="input" type="text" step="any" id="dinheiro" placeholder="0" onblur="total()" min="0"><span class="dinheiro-barra-border"></span>
                     </div>
+
                     <div class="pix-barra">
-                        <p class="dinheiro">Pix <input class="input" type="text" step="any" id="pix" placeholder="0" onblur="total()" min="0"><span class="pix-barra-border"></span> </p>
+                        <label class="dinheiro" for="pix"> Pix</label>
+                        <input class="input" type="text" step="any" id="pix" placeholder="0" onblur="total()" min="0"><span class="pix-barra-border"></span>
                     </div>
+
                     <p class="dinheiro" id="dinheiroTotal">Subtotal:</p>
+
                 </form>
+
                     <p class="botao-entrada">
                     <button class="button" onclick="abrirModalSoma()">Somar</button>
                     <button class="button" onclick="abrirModalSubtracao()">Subtrair</button>
@@ -86,45 +114,44 @@
                     <p class="botao-entrada">
                     <button class="red-button" onclick="total()">Limpar soma</button>
                     <button class="red-button" onclick="location.reload()">Limpar tudo</button>
-                </p>            
+                    </p>            
             </div>
         </div>
+
         <div class="box">
             <h1 class="titulo"> Total</h1>
             <div class="box-itens">
-                <h2 class="total" id="total">Total: R$ 0</h2>
-                <p class="maqui" id="mac">Cartão: R$ 0</p>
-                <p class="dinh" id="din">Dinheiro: R$ 0</p>
-                <p id="valoresSomados">Historico de soma: R$ </p>
-                <p id="resultadoSoma"></p>
-                <p id="valoresSubtraidos">Historico de subtração: R$ </p>
-                <p id="resultadoSub"></p>
+                <h2 class="total">Total: <span class="span-cifrao" id="total" >R$ 0</span></h2>
+                <p class="maqui" id="mac">Cartão: R$</p>
+                <p class="dinh" id="din">Dinheiro: R$</p>
+                <p id="valoresSomados">Historico de soma: </p>
+                <p>R$ <span id="resultadoSoma"></span></p>
+                <p id="valoresSubtraidos">Historico de subtração:</p>
+                <p>R$ <span id="resultadoSub"></span> </p>
             </div>
         </div>
     </div>
-    <div>
-        <dialog class="card" id="dialog-soma">
-            <div class="form">
-                <p class="dialog-font">Digite o valor a ser somado ou 0 para sair</p>
-                <input class="input-card-soma" type="number" value="0" id="somaInput" onkeydown="if (event.key === 'Enter') somar()">
-                <button class="green-button" onclick="somar()">Continuar</button>
-                <button class="red-button" onclick="fecharSoma()">Sair</button>
-            </div>
-            <p id="dialog-soma-resultado">Subtotal</p>
-        </dialog>
-    </div>
-    <div>
-        <dialog class="card" id="dialog-Subtra">
-            <div class="form">
-                <p class="dialog-font">Digite o valor a ser subtraido ou 0 para sair</p>
-                <input class="input-card-soma" type="number" value="0" id="subtracaoInput" onkeydown="if (event.key === 'Enter') subtrair()">
-                <button class="green-button" onclick="subtrair()">Continuar</button>
-                <button class="red-button" onclick="fecharSubtracao()">Sair</button>
-            </div>
-            <p id="dialog-sub-resultado">Subtotal</p>
-        </dialog>
-    </div>
-   
+</main>
+
+    <dialog class="card" id="dialog-soma">
+        <div class="form">
+             <p class="dialog-font">Digite o valor a ser somado ou 0 para sair</p>
+             <input class="input-card-soma" type="number" id="somaInput" onkeydown="if (event.key === 'Enter') { event.preventDefault(); somar(); }">
+             <button class="green-button" onclick="somar()">Continuar</button>
+             <button class="red-button" onclick="fecharSoma()">Sair</button>
+        </div>
+          <p id="dialog-soma-resultado">Subtotal</p>
+    </dialog>
+
+    <dialog class="card" id="dialog-Subtra">
+         <div class="form">
+             <p class="dialog-font">Digite o valor a ser subtraido ou 0 para sair</p>
+             <input class="input-card-soma" type="number" id="subtracaoInput" onkeydown="if (event.key === 'Enter') subtrair()">
+             <button class="green-button" onclick="subtrair()">Continuar</button>
+             <button class="red-button" onclick="fecharSubtracao()">Sair</button>
+         </div>
+        <p id="dialog-sub-resultado">Subtotal</p>
+    </dialog>
 
 </body>
 

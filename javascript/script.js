@@ -103,7 +103,7 @@ function total() {
     somaTotal =+ total;
 
     //aba Total
-    document.getElementById('total').textContent = `Total: ${valorFormatado}`
+    document.getElementById('total').textContent = valorFormatado;
     //adicionao o valor no dialog
     document.getElementById("dialog-soma-resultado").textContent = `Subtotal: ${valorFormatado}`;
     document.getElementById("dialog-sub-resultado").textContent = `Subtotal: ${valorFormatado}`;
@@ -174,7 +174,7 @@ function somar() {
             somaTotal =+ acumulador;
 
             let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-            document.getElementById('total').textContent = `Total ${valorFormatado}`;
+            document.getElementById('total').textContent = valorFormatado;
 
             historico.push(` ${valor},`);
             document.getElementById('resultadoSoma').textContent = historico.join(' ');
@@ -213,7 +213,7 @@ function subtrair() {
             somaTotal =+ acumulador;
 
             let valorFormatado = acumulador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-            document.getElementById('total').textContent = `Total ${valorFormatado}`;
+            document.getElementById('total').textContent = valorFormatado;
 
             historico.push(` ${valor},`);
             document.getElementById('resultadoSub').textContent = historico.join(' ');

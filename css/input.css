@@ -33,6 +33,7 @@ input[type=number] {
 .banrisul-barra {
     --border-after-color: #00a2ff;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .banrisul-barra-border {
@@ -54,6 +55,7 @@ input:focus~.banrisul-barra-border {
 .stone-barra {
     --border-after-color: #20EC0E;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .stone-barra-border {
@@ -75,6 +77,7 @@ input:focus~.stone-barra-border {
 .cielo-barra {
     --border-after-color: #000000;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .cielo-barra-border {
@@ -117,6 +120,7 @@ input:focus~.caixa-barra-border {
 .dinheiro-barra {
     --border-after-color: #FFE500;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .dinheiro-barra-border {

@@ -35,8 +35,25 @@ button {
 
 }
 
+.span-cifrao {
+    color: rgb(250, 225, 3);
+}
+
 .total {
     color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.maqui, .dinh, #valoresSomados, #resultadoSoma, #valoresSubtraidos ,#resultadoSub {
+    font-family: 'Roboto', sans-serif;
+}
+
+#resultadoSoma {
+    color: #20EC0E;
+}
+
+#resultadoSub {
+    color: #ff5733;
 }
 
 .botao-entrada {
@@ -111,4 +128,5 @@ label.ui-switch {
     align-items: center;
     margin-right: 50px;
 }
+
 
