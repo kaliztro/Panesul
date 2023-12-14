@@ -226,6 +226,7 @@ function subtrair() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    //verifica o tema padrao do navegador e ajusta o botao do tema
     let body = document.body;
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         body.classList.add('dark-theme');
@@ -234,6 +235,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('theme-toggle').checked = true
     }
 
+
+    //aplica mascara nos inputs
     $(document).ready(function() {
         var ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#caixa', '#dinheiro', '#pix'];
     
@@ -241,6 +244,15 @@ document.addEventListener('DOMContentLoaded', function() {
           $(ids[i]).mask('000.000.000.000.000,00', { reverse: true });
         }
       });
+
+    //ajusta o zoom da pagina conforme a largura e altura definida
+    let largura = screen.width;
+    let altura = screen.height;
+
+    if (largura == 1366 && altura == 768) {
+        document.body.style.zoom = "75%";
+    }
+
 })
 
 function alterarTema() {
@@ -254,9 +266,6 @@ function alterarTema() {
         body.classList.add('light-theme');
     }
 }
-
-
-
 
 console.log("%c✋ Espere! 🛑", "font-family:Comic Sans MS; font-size: 60px; font-weight: bold; color: red; background: #fff; border: 1px solid #f3f3f3; border-radius: 10px; padding: 15px")
 console.log('%c🤬 O que você esta fazendo aqui?. cai fora!!', "font-family:Comic Sans MS; font-size: 20px; font-weight: bold; color: #7F7F7F; background: #fff; border: 1px solid #f3f3f3; border-radius: 5px; padding: 8px")
