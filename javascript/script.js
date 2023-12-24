@@ -49,10 +49,10 @@ function ValorFormatado(valor) {
 }
 
 function atualizarElementos() {
-    const maquinhasValores = Maquininhas();
+    const maquininhasValores = Maquininhas();
     
     Object.keys(maquininhas).forEach(nomeMaquininha => {
-        let valorFormatado = ValorFormatado(maquinhasValores[nomeMaquininha]);
+        let valorFormatado = ValorFormatado(maquininhasValores[nomeMaquininha]);
         const elementos = maquininhas[nomeMaquininha];
 
         elementos.forEach(elementoId => {
@@ -74,7 +74,7 @@ function total() {
     let total = Maquininhas().total + dinheiro + pix;
     let valorFormatado = ValorFormatado(total)
 
-    somaTotal =+ total;
+    somaTotal += total;
 
     let totMaq = ValorFormatado(Maquininhas().total);
     let totDinh = ValorFormatado(totDin)
