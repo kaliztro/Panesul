@@ -10,19 +10,26 @@
 
     <title>Panesul - Fechamento</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/light.css">
-    <link rel="stylesheet" href="css/input.css">
-    <link rel="stylesheet" href="css/button.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Slab:wght@300&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>       
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/light.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/button.css">
+
 
     <script src="javascript/script.js"></script>
+    <script src="javascript/calculadora.js"></script>
+    <script src="javascript/DOMContentLoaded.js"></script>
+    <script src="javascript/tema.js"></script>
+    <script src="javascript/proximoCampoEnter.js"></script>
+    <script src="javascript/console.js"></script>
 
 </head>
 
@@ -47,59 +54,59 @@
                 <form>
                     <div class="banrisul-barra"> 
                     <label class="banrisul" for="banri1">Banrisul 1</label>
-                    <input class="input" type="text" id="banri1" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span> 
+                    <input class="input" type="text" id="banri1" placeholder="0" min="0"><span class="banrisul-barra-border"></span> 
                     </div>
 
                     <div class="banrisul-barra">
                         <label class="banrisul" for="banri2">Banrisul 2</label>
-                        <input class="input" type="text" id="banri2" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span>
+                        <input class="input" type="text" id="banri2" placeholder="0" min="0"><span class="banrisul-barra-border"></span>
                     </div>
 
                     <div class="banrisul-barra">
                         <label class="banrisul" for="banri3">Banrisul 3</label>
-                        <input class="input" type="text" id="banri3" step="any" placeholder="0" onblur="banrisulSoma()" min="0"><span class="banrisul-barra-border"></span>
+                        <input class="input" type="text" id="banri3" placeholder="0" min="0"><span class="banrisul-barra-border"></span>
                     </div>
 
                     <p class="banrisul" id="banrisulTotal">Subtotal:</p>
                     
                     <div class="stone-barra">
                         <label class="stone" for="stone1">Stone 1 </label>
-                        <input class="input" type="text" id="stone1" step="any" placeholder="0" onblur="stoneSoma()" min="0"><span class="stone-barra-border"></span>
+                        <input class="input" type="text" id="stone1" placeholder="0" min="0"><span class="stone-barra-border"></span>
                     </div>
                     <div class="stone-barra">
                         <label class="stone" for="stone2">Stone 2 </label>
-                        <input class="input" type="text" id="stone2" step="any" placeholder="0" onblur="stoneSoma()" min="0"  ><span class="stone-barra-border"></span>
+                        <input class="input" type="text" id="stone2" placeholder="0" min="0"  ><span class="stone-barra-border"></span>
                     </div>
 
                     <p class="stone" id="stoneTotal">Subtotal:</p>
 
                     <div class="cielo-barra">
                         <label class="cielo" for="cielo1"> Cielo 1</label>
-                        <input class="input" type="text" id="cielo1" step="any" placeholder="0" onblur="cieloSoma()" min="0"><span class="cielo-barra-border"></span>
+                        <input class="input" type="text" id="cielo1" placeholder="0" min="0"><span class="cielo-barra-border"></span>
                     </div>
 
                     <div class="cielo-barra">
                         <label class="cielo" for="cielo2"> Cielo 2</label>
-                        <input class="input" type="text" step="any" id="cielo2" placeholder="0" onblur="cieloSoma()" min="0"><span class="cielo-barra-border"></span>
+                        <input class="input" type="text" id="cielo2" placeholder="0" min="0"><span class="cielo-barra-border"></span>
                     </div>
 
                     <p class="cielo" id="cieloTotal">Subtotal:</p>
 
                     <div class="caixa-barra">
                         <label class="caixa" for="caixa"> Caixa</label>
-                        <input class="input" type="text" step="any" id="caixa" placeholder="0" onblur="caixaSoma()" min="0"><span class="caixa-barra-border"></span>
+                        <input class="input" type="text" id="caixa" placeholder="0" min="0"><span class="caixa-barra-border"></span>
                     </div>
 
                     <p class="caixa" id="caixaTotal">Subtotal:</p>
 
                     <div class="dinheiro-barra">
                         <label class="dinheiro" for="dinheiro"> Dinheiro</label>
-                        <input class="input" type="text" step="any" id="dinheiro" placeholder="0" onblur="total()" min="0"><span class="dinheiro-barra-border"></span>
+                        <input class="input" type="text" id="dinheiro" placeholder="0" min="0"><span class="dinheiro-barra-border"></span>
                     </div>
 
                     <div class="pix-barra">
                         <label class="dinheiro" for="pix"> Pix</label>
-                        <input class="input" type="text" step="any" id="pix" placeholder="0" onblur="total()" min="0"><span class="pix-barra-border"></span>
+                        <input class="input" type="text" id="pix" placeholder="0" min="0"><span class="pix-barra-border"></span>
                     </div>
 
                     <p class="dinheiro" id="dinheiroTotal">Subtotal:</p>
