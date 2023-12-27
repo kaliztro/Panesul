@@ -30,8 +30,8 @@ function somar() {
             historico.push(` ${valor},`);
             document.getElementById('resultadoSoma').textContent = historico.join(' ');
 
-            document.getElementById("dialog-soma-resultado").textContent = `Subotal ${valorFormatado}`;
-            document.getElementById("dialog-sub-resultado").textContent = `Subotal ${valorFormatado}`;
+            document.getElementById("dialog-soma-resultado").textContent = `Subotal: ${valorFormatado}`;
+            document.getElementById("dialog-sub-resultado").textContent = `Subotal: ${valorFormatado}`;
         }
         document.getElementById("somaInput").value = ''; // Limpa o input para o próximo valor
     }
@@ -69,8 +69,8 @@ function subtrair() {
             historico.push(` ${valor},`);
             document.getElementById('resultadoSub').textContent = historico.join(' ');
 
-            document.getElementById("dialog-sub-resultado").textContent = `Subotal ${valorFormatado}`;
-            document.getElementById("dialog-soma-resultado").textContent = `Subotal ${valorFormatado}`;
+            document.getElementById("dialog-sub-resultado").textContent = `Subtotal ${valorFormatado}`;
+            document.getElementById("dialog-soma-resultado").textContent = `Subtotal ${valorFormatado}`;
         }
         document.getElementById("subtracaoInput").value = ''; // Limpa o input para o próximo valor
     }

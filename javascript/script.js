@@ -27,10 +27,10 @@ function Maquininhas() {
 }
 
 const maquininhas = {
-    banrisul: ['banrisulTotal', 'dialog-soma-resultado', 'dialog-sub-resultado'],
-    stone: ['stoneTotal', 'dialog-soma-resultado', 'dialog-sub-resultado'],
-    cielo: ['cieloTotal', 'dialog-soma-resultado', 'dialog-sub-resultado'],
-    caixa: ['caixaTotal', 'dialog-soma-resultado', 'dialog-sub-resultado']
+    banrisul: ['banrisulTotal'],
+    stone: ['stoneTotal'],
+    cielo: ['cieloTotal'],
+    caixa: ['caixaTotal']
 };
 
 function element(elemento) {
@@ -74,7 +74,7 @@ function total() {
     let total = Maquininhas().total + dinheiro + pix;
     let valorFormatado = ValorFormatado(total)
 
-    somaTotal += total;
+    somaTotal =+ total;
 
     let totMaq = ValorFormatado(Maquininhas().total);
     let totDinh = ValorFormatado(totDin)
@@ -85,7 +85,13 @@ function total() {
     document.getElementById('din').textContent = `Dinheiro: ${totDinh}`;
     document.getElementById('dinheiroTotal').textContent = `Subtotal: ${totDinh}`;
 
+    //seta no modal soma/subtracao o valor atual
+    document.getElementById('dialog-soma-resultado').textContent = `Subtotal: ${valorFormatado}`;
+    document.getElementById('dialog-sub-resultado').textContent = `Subtotal: ${valorFormatado}`;
+
     //deixa o historico de soma e de subtração zerados
-    document.getElementById('resultadoSoma').textContent = ``
-    document.getElementById('resultadoSub').textContent = ``
+    document.getElementById('resultadoSoma').textContent = ``;
+    document.getElementById('resultadoSub').textContent = ``;
 }
+
+
