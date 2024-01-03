@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //soma em tempo real
     $(document).ready(function() {
-        let ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#caixa', '#dinheiro', '#pix'];
+        let ids = ['#banri1', '#banri2', '#banri3', '#stone1', '#stone2', '#cielo1', '#cielo2', '#caixa', '#tef', '#dinheiro', '#pix'];
     
         for (let i = 0; i < ids.length; i++) {
             $(ids[i]).mask('000.000.000.000.000,00', { reverse: true });

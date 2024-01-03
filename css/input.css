@@ -137,6 +137,28 @@ input:focus~.dinheiro-barra-border {
     width: 10.2rem; 
 }
 
+/* Efeito para o input TEF */
+
+.tef-barra {
+    --border-after-color: #20EC0E;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.tef-barra-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 2.3rem;
+    transition: 0.3s;
+}
+
+input:focus~.tef-barra-border {
+    width: 10.3rem; 
+}
+
 /* Efeito para o input Dinheiro */
 
 .pix-barra {

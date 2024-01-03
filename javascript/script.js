@@ -9,19 +9,22 @@ function Maquininhas() {
     let cielo1 = validarNumero(element('cielo1'))
     let cielo2 = validarNumero(element('cielo2'))
     let caixa = validarNumero(element('caixa'))
+    let tef = validarNumero(element('tef'))
 
     let banrisulTotal = banri1 + banri2 + banri3
     let stoneTotal = stone1 + stone2
     let cieloTotal = cielo1 + cielo2
     let caixaTotal = caixa
+    let tefTotal = tef
 
-    let total = banrisulTotal + stoneTotal + cieloTotal + caixaTotal
+    let total = banrisulTotal + stoneTotal + cieloTotal + caixaTotal + tefTotal
 
     return {
         banrisul: banrisulTotal,
         stone: stoneTotal,
         cielo: cieloTotal,
         caixa: caixaTotal,
+        tef: tefTotal,
         total: total
     }
 }
@@ -30,7 +33,8 @@ const maquininhas = {
     banrisul: ['banrisulTotal'],
     stone: ['stoneTotal'],
     cielo: ['cieloTotal'],
-    caixa: ['caixaTotal']
+    caixa: ['caixaTotal'],
+    tef: ['tefTotal']
 };
 
 function element(elemento) {

@@ -15,8 +15,8 @@ button {
 }
 
 .box {
-    width: 20rem;
-    height: 45rem;
+    width: 20rem;      /*! Largura */
+    height: 48rem;     /*! Altura */
     background-color: #2e2f30;
     border-radius: 20px;
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
@@ -82,13 +82,18 @@ p {
     color: #ffc013;
 }
 
+.tef {
+    color: #20EC0E;
+    font-family: 'roboto', Times, serif;
+}
+
 .dinheiro {
     color: #FFE500;
 }
 
 .card {
-    width: 350px; min-width: 175px;
-    height: 150px; min-height: 125px;
+    width: 350px; min-width: 175px;      /*! Largura */
+    height: 150px; min-height: 125px;    /*! Altura */
     border-radius: 30px;
     background: #212121;
     box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
